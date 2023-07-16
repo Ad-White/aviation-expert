@@ -14,6 +14,8 @@ function playGame() {
 
     let attempts = 7;
 
+    let highlightedTilesList = [];
+
     let startBtn = document.getElementById('startBtn');
     startBtn.addEventListener('click', startGenerator);
 
@@ -30,6 +32,7 @@ function playGame() {
      *  If true, the generator starts by calling the tileGenerator function.
      *  If conditions are not met, the generatorStarted variable is set 
      *  to false and the generator is in a stopped state.
+     *  It then calls to functions reveal, then askForGuess.
      */
     function startGenerator() {
 
@@ -108,6 +111,22 @@ function playGame() {
         generatorStarted = false;
     
     }   
+
+    
+    /** The reveal function first pushes the selectedTile into the
+     *  highlightedTilesList array. 
+     *  It applies a class of .revealed to remove its visibility then
+     *  removes the existing class of .inplay.
+     */
+    function reveal() {
+
+        highlightedTilesList.push(selectedTile);
+        console.log(highlightedTilesList);
+
+        selectedTile.classList.add('revealed');
+        selectedTile.classList.remove('inPlay');
+
+    }
 
     /** This function creates the gameboard table.
      *  It also adds the message area, user answer area.
