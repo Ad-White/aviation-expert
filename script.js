@@ -8,14 +8,22 @@ function playGame() {
     playBtn.remove();
     welcome.remove();
     createGameArea();
-    
-    let gameLevel = 1;
-    let generatorStarted = true;
 
+    // Game variables.
+    let generatorStarted = true;
+    let gameLevel = 1;
     let attempts = 7;
 
+    // An array to store any highlighted tiles
     let highlightedTilesList = [];
+    
+    let gameImageSelection = [
+        { gameImageName: 'sea harrier', gameImage: 'url(images/sea_harrier_12019.jpg)', photographer: '12019' }
+    ];
 
+    setBackgroundImage();
+
+    // Game control buttons
     let startBtn = document.getElementById('startBtn');
     startBtn.addEventListener('click', startGenerator);
 
@@ -25,7 +33,50 @@ function playGame() {
     let quitBtn = document.getElementById('quitBtn');
     quitBtn.addEventListener('click', quitGame);
 
+    // Set message to prompt player to start a game.
     messageArea.innerHTML = `<p>Press Start To Begin Game</p>`;
+
+
+    /** The setBackgroundImage function randomly selects an object from the gameImageSelection array.
+     *  This object now becomes the currentGameImage.
+     *  The answer variable is set by retrieving the gameImageName from the currentGameImage object.
+     *  The photographer variable is set to the value retrieved from the currentGameImage photographer key.
+     *  The function then takes the currentGameImage gameImage and sets it as the tileTable background.
+     *  This background image is styled with a position of 'center', a backgroundSize set to 'cover',
+     *  and a 'no-repeat' background.
+     *  A call is made to the displayPhotographer function in order to deal with those details.
+     *  The last thing this function performs is to take the currentGameImage and remove it from the 
+     *  gameImageSelection array. The array reduces with each game completed, stopping the image/answer
+     *  from being selected again throughout the rest of the game.
+     */
+    function setBackgroundImage() {
+
+        currentGameImage = gameImageSelection[Math.floor(Math.random() * gameImageSelection.length)];
+        console.log("current game image now " + currentGameImage.gameImage);
+    
+        console.log("this is the chosenImageName " + currentGameImage.gameImageName);
+    
+        answer = currentGameImage.gameImageName;
+        console.log("this is the answer " + answer);
+    
+        photographer = currentGameImage.photographer;
+        
+        let setDisplay = document.getElementById('tileTable');
+        setDisplay.style.background = `${currentGameImage.gameImage}`;
+        setDisplay.style.backgroundPosition = 'center';
+        setDisplay.style.backgroundSize = 'cover';
+        setDisplay.style.backgroundRepeat = 'no-repeat';
+    
+        displayPhotographer();
+        
+        currentGameImage = gameImageSelection.indexOf(currentGameImage);
+    
+        if (currentGameImage > -1) {
+          gameImageSelection.splice(currentGameImage, 1);
+        }
+        console.log(gameImageSelection);
+    }
+    
     
     /** The startGenerator function checks conditions are true for variables,
      *  generatorStarted, attempts and gameLevel.
@@ -73,6 +124,7 @@ function playGame() {
         console.log(randomTile);
     }
 
+
     /** The addHighLight function takes in the randomly selected tile from the tileGenerator.
      *  It sets a class of .highlight to the object.
      *  Then adds a setTimeOut of 300 ms before the function removeHighLight, removes the
@@ -97,6 +149,7 @@ function playGame() {
           }
         }
     }
+
     
     /** The stopGenerator function takes the selectedTile
      *  and adds a class of .selectorLight.
@@ -127,6 +180,10 @@ function playGame() {
         selectedTile.classList.remove('inPlay');
 
     }
+
+    
+
+
 
     /** This function creates the gameboard table.
      *  It also adds the message area, user answer area.
