@@ -77,6 +77,17 @@ function playGame() {
         console.log(gameImageSelection);
     }
     
+
+    /** This function displays the name of the photographer associated with the currentGameImage.
+     *  It adds this info. to the footer of the page and includes a link to the website, Pixabay.
+    */
+    function displayPhotographer() {
+
+        console.log("this is the photographer of the gameImage " + photographer);
+        
+        document.getElementById('photographer').innerHTML = `<h6>Photo by ` + photographer + ` via <a href="https://pixabay.com/" target=_"blank">Pixabay</a></h6>`;
+          
+    }
     
     /** The startGenerator function checks conditions are true for variables,
      *  generatorStarted, attempts and gameLevel.
