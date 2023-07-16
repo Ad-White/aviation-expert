@@ -78,6 +78,7 @@ function playGame() {
     }
     
 
+
     /** This function displays the name of the photographer associated with the currentGameImage.
      *  It adds this info. to the footer of the page and includes a link to the website, Pixabay.
     */
@@ -193,8 +194,18 @@ function playGame() {
     }
 
     
+    /** This function displays a message to the player.
+     *  It then makes a call to the addUserInput function.
+     */
+    function askForGuess() {
 
-
+        let msg = document.getElementById('messageArea');
+        msg.innerHTML = `<p>Please Enter Your Guess<br>Or Skip...</p>`;
+    
+        addUserInput();
+    
+    }
+    
 
     /** This function creates the gameboard table.
      *  It also adds the message area, user answer area.
