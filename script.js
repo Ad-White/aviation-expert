@@ -48,10 +48,13 @@ function playGame() {
     }
     
 
-    /** The tileGenerator function returns all elements with classes of .tile and .inPlay as an HTML Collection.
-     *  It chooses one of these elements at random. The randomTile is passed to the addHighLight function
-     *  where it applies a highlight to the random tile. 
-     *  The variable name is then changed to selectedTile, where it then gets used in the function, stopGenerator.
+    /** The tileGenerator function returns all elements with classes of
+     *  .tile and .inPlay as an HTML Collection.
+     *  It chooses one of these elements at random.
+     *  The randomTile is passed to the addHighLight function where it applies
+     *  a highlight to the random tile. 
+     *  The variable name is then changed to selectedTile, where it then gets 
+     *  used in the function, stopGenerator.
      */
     function tileGenerator() {
 
@@ -90,7 +93,21 @@ function playGame() {
             startGenerator();
           }
         }
-      }
+    }
+    
+    /** The stopGenerator function takes the selectedTile
+     *  and adds a class of .selectorLight.
+     *  It then removes the event listener from the stop button.
+     *  It stops the generator by setting generatorStarted to false.
+     */
+    function stopGenerator() {
+        selectedTile.classList.add('selectorLight')
+        console.log(selectedTile);
+        stopBtn.removeEventListener('click', stopGenerator);
+    
+        generatorStarted = false;
+    
+    }   
 
     /** This function creates the gameboard table.
      *  It also adds the message area, user answer area.
