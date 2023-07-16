@@ -78,3 +78,19 @@ I have chosen what I hope to be colours that will be intuitive for the player to
 
 - [Open Sans](https://fonts.google.com/specimen/Open+Sans) was used for the primary text across the site.
  
+### Imagery
+
+All images used throughout this site have been sourced from [Pixabay](https://pixabay.com/).
+
+### Wireframes
+
+To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
+I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
+
+### Game Page Wireframes
+
+| Size | Screenshot |
+| --- | --- |
+| Mobile | ![screenshot](documentation/wireframes/ae_mobile_wireframe.png) |
+| Tablet | ![screenshot](documentation/wireframes/ae_tablet_wireframe.png) |
+| Desktop | ![screenshot](documentation/wireframes/ae_desktop_wireframe.png) |
