@@ -18,7 +18,7 @@ function playGame() {
     let highlightedTilesList = [];
     
     let gameImageSelection = [
-        { gameImageName: 'sea harrier', gameImage: 'url(images/sea_harrier_12019.jpg)', photographer: '12019' }
+        { gameImageName: 'sea harrier', gameImage: 'url(assets/images/sea_harrier_12019.jpg)', photographer: '12019' }
     ];
 
     setBackgroundImage();
