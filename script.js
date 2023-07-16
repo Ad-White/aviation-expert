@@ -207,6 +207,23 @@ function playGame() {
     }
     
 
+    /** This function adds a text input to the userAnswer element.
+     *  It also adds a submit / skip button with event listener.
+     */
+    function addUserInput() {
+
+        document.getElementById("userAnswer").innerHTML = `<input type="text" style="font-size: 20px;" id='userInputArea' placeholder="Enter Guess Here..."></input><br><button id="userBtn" class="button">Guess / Skip</button>`;
+        userBtn.addEventListener('click', checkAnswer);
+    }
+
+    
+    /** This function removes any content from the userAnswer element. */
+    function removeUserInput() {
+
+        document.getElementById('userAnswer').innerHTML = "";
+    }
+
+    
     /** This function creates the gameboard table.
      *  It also adds the message area, user answer area.
      *  Plus player button controls, current level and attempts 
