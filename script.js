@@ -45,28 +45,52 @@ function playGame() {
           reveal();
           askForGuess();
         }
-      }
+    }
     
 
-      /** The tileGenerator function returns all elements with classes of .tile and .inPlay as an HTML Collection.
-       *  It chooses one of these elements at random. The randomTile is passed to the addHighLight function
-       *  where it applies a highlight to the random tile. 
-       *  The variable name is then changed to selectedTile, where it then gets used in the function, stopGenerator.
-       */
-      function tileGenerator() {
+    /** The tileGenerator function returns all elements with classes of .tile and .inPlay as an HTML Collection.
+     *  It chooses one of these elements at random. The randomTile is passed to the addHighLight function
+     *  where it applies a highlight to the random tile. 
+     *  The variable name is then changed to selectedTile, where it then gets used in the function, stopGenerator.
+     */
+    function tileGenerator() {
 
         // eventListener is removed to prevent multiple starting of the generator
         startBtn.removeEventListener('click', startGenerator);
-    
+
         let tiles = document.querySelectorAll(".tile" && ".inPlay");
-    
+
         let randomTile = tiles[Math.floor(Math.random() * tiles.length)];
         addHighLight(randomTile);
         selectedTile = randomTile;
-    
-        console.log(randomTile);
-      }
 
+        console.log(randomTile);
+    }
+
+    /** The addHighLight function takes in the randomly selected tile from the tileGenerator.
+     *  It sets a class of .highlight to the object.
+     *  Then adds a setTimeOut of 300 ms before the function removeHighLight, removes the
+     *  class applied.
+     *  If the stop button has been pressed, the stopGenerator function is called.
+     *  If the stop button hasn not been pressed, the startGenerator fucntion is called.
+     */
+    function addHighLight(tile) {
+        tile.classList.add("highlight");
+    
+        const waitAbit = setTimeout(removeHighlight, 300);
+        function removeHighlight() {
+          tile.classList.remove("highlight");
+          clearTimeout(waitAbit);
+    
+          console.log("tile id:" + tile.id);
+    
+          if (stopBtn === true) {
+            stopGenerator();
+          } else {
+            startGenerator();
+          }
+        }
+      }
 
     /** This function creates the gameboard table.
      *  It also adds the message area, user answer area.
