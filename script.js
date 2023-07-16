@@ -18,7 +18,7 @@ function playGame() {
     let highlightedTilesList = [];
     
     let gameImageSelection = [
-        { gameImageName: 'sea harrier', gameImage: 'url(assets/images/sea_harrier_12019.jpg)', photographer: '12019' }
+        { gameImageName: 'sea Harrier', gameImage: 'url(assets/images/sea_harrier_12019.jpg)', photographer: '12019' }
     ];
 
     setBackgroundImage();
@@ -209,7 +209,7 @@ function playGame() {
 
     /** This function adds a text input to the userAnswer element.
      *  It also adds a submit / skip button with event listener.
-     */
+    */
     function addUserInput() {
 
         document.getElementById("userAnswer").innerHTML = `<input type="text" style="font-size: 20px;" id='userInputArea' placeholder="Enter Guess Here..."></input><br><button id="userBtn" class="button">Guess / Skip</button>`;
@@ -224,6 +224,92 @@ function playGame() {
     }
 
     
+    /** The checkAnswer function checks the answer given by the player
+     *  and compares it to the accepted answer.
+     *  The function congratulates the player if the answer is correct, game level is incremented
+     *  and calls the finalReveal function.
+     *  If the game has not exceeded level three. A next level button appears, so as to continue.
+     *  If the player has completed all three levels, the player is congratulated again,
+     *  and the game has been completed.
+     *  If the answer was incorrect and the remaining attempts are above 0.
+     *  The player is invited to select another tile and try again.
+     *  If the players attempts reach 0, the game is over.
+    */
+    function checkAnswer() {
+        // removes any white space then sets the userAnswer to lowercase
+        userAnswer = document.getElementById('userInputArea').value.trim().toLowerCase();
+        userAnswer = userAnswer.replace(/-|\s/g, ""); // removes hyphens and white space 
+        console.log("my regExp userAnswer " + userAnswer);
+        
+        // removes any white space then sets the answer to lowercase
+        answer = answer.trim().toLowerCase();
+        answer = answer.replace(/-|\s/g, ""); // removes hyphens and white space 
+        console.log("my regExp answer " + answer);
+    
+    
+        if (userAnswer === answer) {
+          console.log('winner');
+          messageArea.innerHTML = `<p>Congratulations!</p>`;
+    
+          finalReveal();
+          
+          console.log(userAnswer);
+          stopGenerator();
+    
+          console.log(`game level: ${gameLevel}`);
+    
+          messageArea.innerHTML += `<p>Level ${gameLevel} Completed!</p>`;
+          startBtn.removeEventListener('click', startGenerator);
+          stopBtn.removeEventListener('click', stopGenerator);
+    
+          gameLevel++;
+    
+          if (gameLevel > 3) {
+    
+            startBtn.remove();
+            stopBtn.remove();      
+            
+            document.getElementById('userAnswer').innerHTML = "";
+    
+            messageArea.innerHTML = `<p>Game Completed!</p>` + `<br>` + `<h1>You Are An Aviation Expert!!!!</h1>`;
+    
+            return;
+          }
+    
+          document.getElementById('userAnswer').innerHTML = `<button id='nextLevelBtn' class="button">Next Level</button></p>`;
+          let nextLevelBtn = document.getElementById('nextLevelBtn');
+          nextLevelBtn.addEventListener('click', nextLevel);
+    
+        } else if (userAnswer != answer && attempts >= 1) {
+          console.log('not quite!');
+          removeUserInput();
+          messageArea.innerHTML = `<p>Better Luck Next Time!<br>Press Start To Try Again...</p>`;
+          attempts--;
+          console.log(attempts);
+          if (attempts != 1) {
+            messageArea.innerHTML += `<p>You Have ${attempts} Attempts Remaining.</p>`;
+          } else {
+            messageArea.innerHTML += `<p>You Have ${attempts} Attempt Remaining.</p>`;
+          }
+    
+          startBtn.addEventListener('click', startGenerator);
+          stopBtn.addEventListener('click', stopGenerator);
+    
+          updateAttempts();
+    
+          generatorStarted = true;
+    
+          if (userAnswer != answer && attempts <= 0) {
+            messageArea.innerHTML = `<p>Game Over!</p>`;
+    
+            startBtn.removeEventListener('click', startGenerator);
+            return;
+          }
+        }
+    }
+    
+
+
     /** This function creates the gameboard table.
      *  It also adds the message area, user answer area.
      *  Plus player button controls, current level and attempts 
