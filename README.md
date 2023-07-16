@@ -52,3 +52,29 @@ Also, the accepted answer has been kept relatively short and not overly precise.
 
 - As a returning site user, I would like to play the game again but, with a diffent set of aircraft.
 
+## Design
+
+### Colour Scheme
+
+I have chosen a simplistic yet bright colour scheme. One of primary and secondary colours.
+These will be used against a silver coloured background to provide good contrast and give a colourful, overall appearance.
+My intention is for this to help clearly distinguish the game board of tiles from the background, and the gameboard from the players control buttons and text input.
+I have chosen what I hope to be colours that will be intuitive for the player to use as the main game controls.
+
+- `#c0c0c0` - silver - used for background.
+- `#0000ff` - blue - used for game tiles.
+- `#0000ff` - blue - used for primary text.
+- `#ffffff` - white - used for button text.
+- `#008000` - green - used for start button.
+- `#ff0000` - red - used for stop button.
+- `#ffa500` - orange - used for the guess / skip button.
+- `#800080` - purple - used for next level button.
+- `#0000ff` - blue background + `#ffa500` - orange text - used for quit and continue buttons.
+
+### Typography
+ 
+ In keeping with a clean and simple feel to the site. Also, in order to offer a high degree of readability.
+ I have opted for an Open Sans typeface.
+
+- [Open Sans](https://fonts.google.com/specimen/Open+Sans) was used for the primary text across the site.
+ 
