@@ -410,6 +410,26 @@ function playGame() {
   }
 
 
+  /** The exitGame function reloads the current window
+   *  and links back to this sites home page */  
+  function exitGame() {
+
+    window.location.href =  href='https://ad-white.github.io/aviation-expert/';
+    return;
+  }
+
+
+  /** The continueGame function replaces the two buttons, continue and exit.
+   *  It adds the original quit button with event listener in their place.
+   */
+  function continueGame() {
+    document.getElementById('quit').innerHTML = 
+    `<button id="quitBtn" class="button">Quit</button>`;
+    document.getElementById('quitBtn').addEventListener('click', quitGame);
+  
+  }
+
+
   /** This function creates the gameboard table.
    *  It also adds the message area, user answer area.
    *  Plus player button controls, current level and attempts 
