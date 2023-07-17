@@ -15,6 +15,7 @@ function playGame() {
   let attempts = 7;
   let currentGameImage = [];
   let answer = "";
+  let photographer = "";
 
   // An array to store any highlighted tiles
   let highlightedTilesList = [];
@@ -34,15 +35,38 @@ function playGame() {
   startBtn.addEventListener('click', startGenerator);
 
   let stopBtn = document.getElementById('stopBtn');
-  stopBtn.addEventListener('click', stopGenerator);
-
+  
   let quitBtn = document.getElementById('quitBtn');
   quitBtn.addEventListener('click', quitGame);
 
   // Set message to prompt player to start a game.
   messageArea.innerHTML = `<p>Press Start To Begin Game</p>`;
+  
+  /** The startGenerator function checks conditions are true for variables,
+   *  generatorStarted, attempts and gameLevel.
+   *  If true, the generator starts by calling the tileGenerator function.
+   *  If conditions are not met, the generatorStarted variable is set 
+   *  to false and the generator is in a stopped state.
+   *  It then calls to functions reveal, then askForGuess.
+   */
+  function startGenerator() {
 
-
+      if (generatorStarted === true && attempts > 0 && gameLevel <= 3) {
+        messageArea.innerHTML = `<p>Press Stop To Select Your Tile</p>`;
+  
+        stopBtn.addEventListener('click', stopGenerator);
+        tileGenerator();
+  
+      } else {
+        generatorStarted = false;
+  
+        console.log('generator stopped');
+        reveal();
+        askForGuess();
+      }
+  }
+  
+  
   /** The setBackgroundImage function randomly selects an object from the gameImageSelection array.
    *  This object now becomes the currentGameImage.
    *  The answer variable is set by retrieving the gameImageName from the currentGameImage object.
@@ -57,68 +81,32 @@ function playGame() {
    */
   function setBackgroundImage() {
 
-      currentGameImage = gameImageSelection[Math.floor(Math.random() * gameImageSelection.length)];
-      console.log("current game image now " + currentGameImage.gameImage);
-  
-      console.log("this is the chosenImageName " + currentGameImage.gameImageName);
-  
-      answer = currentGameImage.gameImageName;
-      console.log("this is the answer " + answer);
-  
-      photographer = currentGameImage.photographer;
-      
-      let setDisplay = document.getElementById('tileTable');
-      setDisplay.style.background = `${currentGameImage.gameImage}`;
-      setDisplay.style.backgroundPosition = 'center';
-      setDisplay.style.backgroundSize = 'cover';
-      setDisplay.style.backgroundRepeat = 'no-repeat';
-  
-      displayPhotographer();
-      
-      currentGameImage = gameImageSelection.indexOf(currentGameImage);
-  
-      if (currentGameImage > -1) {
-        gameImageSelection.splice(currentGameImage, 1);
-      }
-      console.log(gameImageSelection);
+    currentGameImage = gameImageSelection[Math.floor(Math.random() * gameImageSelection.length)];
+    console.log("current game image now " + currentGameImage.gameImage);
+
+    console.log("this is the chosenImageName " + currentGameImage.gameImageName);
+
+    answer = currentGameImage.gameImageName;
+    console.log("this is the answer " + answer);
+
+    photographer = currentGameImage.photographer;
+    
+    let setDisplay = document.getElementById('tileTable');
+    setDisplay.style.background = `${currentGameImage.gameImage}`;
+    setDisplay.style.backgroundPosition = 'center';
+    setDisplay.style.backgroundSize = 'cover';
+    setDisplay.style.backgroundRepeat = 'no-repeat';
+
+    displayPhotographer();
+    
+    currentGameImage = gameImageSelection.indexOf(currentGameImage);
+
+    if (currentGameImage > -1) {
+      gameImageSelection.splice(currentGameImage, 1);
+    }
+    console.log(gameImageSelection);
   }
-  
 
-
-  /** This function displays the name of the photographer associated with the currentGameImage.
-   *  It adds this info. to the footer of the page and includes a link to the website, Pixabay.
-  */
-  function displayPhotographer() {
-
-      console.log("this is the photographer of the gameImage " + photographer);
-      
-      document.getElementById('photographer').innerHTML = `<h6>Photo by ` + photographer + ` via <a href="https://pixabay.com/" target=_"blank">Pixabay</a></h6>`;
-        
-  }
-  
-  /** The startGenerator function checks conditions are true for variables,
-   *  generatorStarted, attempts and gameLevel.
-   *  If true, the generator starts by calling the tileGenerator function.
-   *  If conditions are not met, the generatorStarted variable is set 
-   *  to false and the generator is in a stopped state.
-   *  It then calls to functions reveal, then askForGuess.
-   */
-  function startGenerator() {
-
-      if (generatorStarted === true && attempts > 0 && gameLevel <= 3) {
-        messageArea.innerHTML = `<p>Press Stop To Select Your Tile</p>`;
-  
-        tileGenerator();
-  
-      } else {
-        generatorStarted = false;
-  
-        console.log('generator stopped');
-        reveal();
-        askForGuess();
-      }
-  }
-  
 
   /** The tileGenerator function returns all elements with classes of
    *  .tile and .inPlay as an HTML Collection.
@@ -196,15 +184,16 @@ function playGame() {
 
     selectedTile.classList.add('revealed');
     selectedTile.classList.remove('inPlay');
-
+    stopBtn.addEventListener('click', stopGenerator);
   }
 
   
-  /** This function displays a message to the player.
-   *  It then makes a call to the addUserInput function.
+  /** This function removes the event listener from the stop button.
+   *  It then displays a message to the player.
+   *  Then makes a call to the addUserInput function.
    */
   function askForGuess() {
-
+    stopBtn.removeEventListener('click', stopGenerator);
     let msg = document.getElementById('messageArea');
     msg.innerHTML = `<p>Please Enter Your Guess<br>Or Skip...</p>`;
 
@@ -299,8 +288,7 @@ function playGame() {
       }
 
       startBtn.addEventListener('click', startGenerator);
-      stopBtn.addEventListener('click', stopGenerator);
-
+      
       updateAttempts();
 
       generatorStarted = true;
@@ -324,7 +312,7 @@ function playGame() {
    *  existing new current level.
    */
   function nextLevel() {
-
+    
     updateAttempts();
     updateCurrentLevel();
 
@@ -335,6 +323,7 @@ function playGame() {
     }
 
     startBtn.addEventListener('click', startGenerator);
+    
 
     generatorStarted = true;
 
@@ -346,10 +335,12 @@ function playGame() {
     }
 
     if (gameLevel === 2) {
+      stopBtn.removeEventListener('click', stopGenerator);
       setBackgroundImage();
       attempts = 6;
       updateAttempts();
     } else if (gameLevel === 3) {
+      stopBtn.removeEventListener('click', stopGenerator);
       setBackgroundImage();
       attempts = 5;
       updateAttempts();
@@ -388,7 +379,16 @@ function playGame() {
     }
   }
   
+
+  /** This function displays the name of the photographer associated with the currentGameImage.
+   *  It adds this info. to the footer of the page and includes a link to the website, Pixabay.
+  */
+  function displayPhotographer() {
+  console.log("this is the photographer of the gameImage " + photographer);
+  document.getElementById('photographer').innerHTML = `<h6>Photo by ` + photographer + ` via <a href="https://pixabay.com/" target=_"blank">Pixabay</a></h6>`;
+  }
   
+
   /** The quitGame function adds two buttons, continue game and exit game,
    *  in place of the original quit button.
    *  Each button is set an event listener.
