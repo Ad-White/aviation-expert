@@ -21,8 +21,8 @@ function playGame() {
   
   let gameImageSelection = [
     { gameImageName: 'sea harrier', gameImage: 'url(assets/images/sea_harrier_12019.jpg)', photographer: '12019' },
-    { gameImageName: 'spitfire', gameImage: 'url(images/spitfire_JonPauling.jpg)', photographer: 'JonPauling' },
-    { gameImageName: 'tornado', gameImage: 'url(images/tornado_StevePortugal.jpg)', photographer: 'StevePortugal' }
+    { gameImageName: 'spitfire', gameImage: 'url(assets/images/spitfire_JonPauling.jpg)', photographer: 'JonPauling' },
+    { gameImageName: 'tornado', gameImage: 'url(assets/images/tornado_StevePortugal.jpg)', photographer: 'StevePortugal' }
   ];
 
   setBackgroundImage();
@@ -380,13 +380,34 @@ function playGame() {
   function finalReveal() {
     
     let remainingTiles = document.querySelectorAll(".tile" && ".inPlay");
-     for (let t=0; t < remainingTiles.length; t++) {
-       remainingTiles[t].classList.remove('inPlay');
-       remainingTiles[t].classList.add('revealed');
- 
-       highlightedTilesList.push(remainingTiles[t]);
-     }
-   }
+    for (let t=0; t < remainingTiles.length; t++) {
+      remainingTiles[t].classList.remove('inPlay');
+      remainingTiles[t].classList.add('revealed');
+
+      highlightedTilesList.push(remainingTiles[t]);
+    }
+  }
+  
+  
+  /** The quitGame function adds two buttons, continue game and exit game,
+   *  in place of the original quit button.
+   *  Each button is set an event listener.
+   */
+  function quitGame() {
+      
+    let quitArea = document.getElementById('quit');
+    quitArea.innerHTML = 
+
+    `<button class="button" id="contBtn">Continue</button>
+    <button class="button" id="exitBtn">Exit</button>`;
+
+    let continueBtn = document.getElementById('contBtn');
+    continueBtn.addEventListener('click', continueGame);  
+    
+    let exitBtn = document.getElementById('exitBtn');
+    exitBtn.addEventListener('click', exitGame);
+      
+  }
 
 
   /** This function creates the gameboard table.
