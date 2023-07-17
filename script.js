@@ -7,7 +7,10 @@ playBtn.addEventListener('click', playGame);
 function playGame() {
   // Remove existing homepage content
   playBtn.remove();
+
+  let welcome = document.getElementById('welcome');
   welcome.remove();
+
   createGameArea();
 
   // Game variables.
@@ -17,6 +20,8 @@ function playGame() {
   let currentGameImage = [];
   let answer = "";
   let photographer = "";
+  let selectedTile = "";
+  let messageArea = document.getElementById('messageArea');
 
   // An array to store any highlighted tiles
   let highlightedTilesList = [];
@@ -158,7 +163,7 @@ function playGame() {
    *  It stops the generator by setting generatorStarted to false.
    */
   function stopGenerator() {
-    selectedTile.classList.add('selectorLight')
+    selectedTile.classList.add('selectorLight');
     stopBtn.removeEventListener('click', stopGenerator);
     generatorStarted = false;
   }   
@@ -194,7 +199,8 @@ function playGame() {
    *  It also adds a submit / skip button with event listener.
   */
   function addUserInput() {
-    document.getElementById("userAnswer").innerHTML = `<input type="text" style="font-size: 20px;" id='userInputArea' placeholder="Enter Guess Here..."></input><br><button id="userBtn" class="button">Guess / Skip</button>`;
+    let userBtn = document.getElementById("userAnswer");
+    userBtn.innerHTML = `<input type="text" style="font-size: 20px;" id='userInputArea' placeholder="Enter Guess Here..."></input><br><button id="userBtn" class="button">Guess / Skip</button>`;
     userBtn.addEventListener('click', checkAnswer);
   }
 
@@ -217,8 +223,9 @@ function playGame() {
    *  If the players attempts reach 0, the game is over.
   */
   function checkAnswer() {
+    let userAnswer = document.getElementById('userInputArea');
     // removes leading and/or trailing white speace, then sets to lower case
-    userAnswer = document.getElementById('userInputArea').value.trim().toLowerCase();
+    userAnswer.value.trim().toLowerCase();
     userAnswer = userAnswer.replace(/-|\s/g, ""); // removes hyphens and white space 
     
     // removes leading and/or trailing white speace, then sets to lower case
@@ -324,12 +331,14 @@ function playGame() {
   
   /** This function displays the players current game level*/
   function updateCurrentLevel() {
+    let currentLevel = document.getElementById('currentLevel');
     currentLevel.innerHTML = `<h4>Current Level: ` + `${gameLevel}</h4>`;
   }
 
 
   /** This function displays the players remaining attempts*/
   function updateAttempts() {
+    let attemptsRemaining = document.getElementById('attemptsRemaining');
     attemptsRemaining.innerHTML = `<h4>Attempts Remaining: ` + `${attempts}</h4>`;
   }
 
@@ -379,15 +388,13 @@ function playGame() {
     
     let exitBtn = document.getElementById('exitBtn');
     exitBtn.addEventListener('click', exitGame);
-      
   }
 
 
   /** The exitGame function reloads the current window
    *  and links back to this sites home page */  
   function exitGame() {
-
-    window.location.href =  href='https://ad-white.github.io/aviation-expert/';
+    window.location.href = 'https://ad-white.github.io/aviation-expert/';
     return;
   }
 
@@ -399,7 +406,6 @@ function playGame() {
     document.getElementById('quit').innerHTML = 
     `<button id="quitBtn" class="button">Quit</button>`;
     document.getElementById('quitBtn').addEventListener('click', quitGame);
-  
   }
 
 
@@ -453,6 +459,6 @@ function playGame() {
 
     <div id="quit">
         <button id="quitBtn" class="button">Quit</button>
-    </div>`
+    </div>`;
   }
 }
