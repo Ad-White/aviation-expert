@@ -199,8 +199,9 @@ function playGame() {
    *  It also adds a submit / skip button with event listener.
   */
   function addUserInput() {
-    let userBtn = document.getElementById("userAnswer");
-    userBtn.innerHTML = `<input type="text" style="font-size: 20px;" id='userInputArea' placeholder="Enter Guess Here..."></input><br><button id="userBtn" class="button">Guess / Skip</button>`;
+    document.getElementById("userAnswer").innerHTML = `<input type="text" style="font-size: 20px;" id='userInputArea' placeholder="Enter Guess Here..."></input>
+    <br><button id="userBtn" class="button">Guess / Skip</button>`;
+    let userBtn = document.getElementById('userBtn');
     userBtn.addEventListener('click', checkAnswer);
   }
 
@@ -223,9 +224,9 @@ function playGame() {
    *  If the players attempts reach 0, the game is over.
   */
   function checkAnswer() {
-    let userAnswer = document.getElementById('userInputArea');
     // removes leading and/or trailing white speace, then sets to lower case
-    userAnswer.value.trim().toLowerCase();
+    let userAnswer = document.getElementById('userInputArea');
+    userAnswer = document.getElementById('userInputArea').value.trim().toLowerCase();
     userAnswer = userAnswer.replace(/-|\s/g, ""); // removes hyphens and white space 
     
     // removes leading and/or trailing white speace, then sets to lower case
