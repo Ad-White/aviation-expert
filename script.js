@@ -13,15 +13,21 @@ function playGame() {
   let generatorStarted = true;
   let gameLevel = 1;
   let attempts = 7;
+  let currentGameImage = [];
+  let answer = "";
 
   // An array to store any highlighted tiles
   let highlightedTilesList = [];
   
   let gameImageSelection = [
-      { gameImageName: 'sea harrier', gameImage: 'url(assets/images/sea_harrier_12019.jpg)', photographer: '12019' }
+    { gameImageName: 'sea harrier', gameImage: 'url(assets/images/sea_harrier_12019.jpg)', photographer: '12019' },
+    { gameImageName: 'spitfire', gameImage: 'url(images/spitfire_JonPauling.jpg)', photographer: 'JonPauling' },
+    { gameImageName: 'tornado', gameImage: 'url(images/tornado_StevePortugal.jpg)', photographer: 'StevePortugal' }
   ];
 
   setBackgroundImage();
+  updateCurrentLevel();
+  updateAttempts();
 
   // Game control buttons
   let startBtn = document.getElementById('startBtn');
@@ -309,10 +315,58 @@ function playGame() {
   }
   
 
+  /** The nextLevel function first updates attempts and current level.
+   *  It removes classes .revealed and .selectorLight, then applies
+   *  the .inPlay class to each object in the highLightedTilesList.
+   *  This 'resets' any of the tiles revealed within the last game.
+   *  If the player chooses to play the next level, the function clears
+   *  the userAnswer area. It then selects the next game level depending on the 
+   *  existing new current level.
+   */
+  function nextLevel() {
+
+    updateAttempts();
+    updateCurrentLevel();
+
+    for (let i = 0; i < highlightedTilesList.length; i++) {
+      highlightedTilesList[i].classList.remove("revealed");
+      highlightedTilesList[i].classList.remove("selectorLight");
+      highlightedTilesList[i].classList.add('inPlay');
+    }
+
+    startBtn.addEventListener('click', startGenerator);
+
+    generatorStarted = true;
+
+    document.getElementById('messageArea').innerHTML = `<p>Press Start To Play</p>`;
+    stopBtn.addEventListener('click', stopGenerator);
+
+    if (startBtn) {
+      document.getElementById('userAnswer').innerHTML = "";
+    }
+
+    if (gameLevel === 2) {
+      setBackgroundImage();
+      attempts = 6;
+      updateAttempts();
+    } else if (gameLevel === 3) {
+      setBackgroundImage();
+      attempts = 5;
+      updateAttempts();
+    }
+  }
+
+  
+  /** This function displays the players current game level*/
+  function updateCurrentLevel() {
+    currentLevel.innerHTML = `<h4>Current Level: ` + `${gameLevel}</h4>`;
+  }
+
+
   /** This function displays the players remaining attempts*/
   function updateAttempts() {
     attemptsRemaining.innerHTML = `<h4>Attempts Remaining: ` + `${attempts}</h4>`;
-  } 
+  }
 
 
   /** This function selects any tiles not revealed within the game.
@@ -333,7 +387,7 @@ function playGame() {
        highlightedTilesList.push(remainingTiles[t]);
      }
    }
-   
+
 
   /** This function creates the gameboard table.
    *  It also adds the message area, user answer area.
