@@ -18,7 +18,7 @@ function playGame() {
     let highlightedTilesList = [];
     
     let gameImageSelection = [
-        { gameImageName: 'sea Harrier', gameImage: 'url(assets/images/sea_harrier_12019.jpg)', photographer: '12019' }
+        { gameImageName: 'sea harrier', gameImage: 'url(assets/images/sea_harrier_12019.jpg)', photographer: '12019' }
     ];
 
     setBackgroundImage();
@@ -236,17 +236,17 @@ function playGame() {
      *  If the players attempts reach 0, the game is over.
     */
     function checkAnswer() {
-        // removes any white space then sets the userAnswer to lowercase
+        // removes leading and/or trailing white speace, then sets to lower case
         userAnswer = document.getElementById('userInputArea').value.trim().toLowerCase();
         userAnswer = userAnswer.replace(/-|\s/g, ""); // removes hyphens and white space 
         console.log("my regExp userAnswer " + userAnswer);
         
-        // removes any white space then sets the answer to lowercase
+        // removes leading and/or trailing white speace, then sets to lower case
         answer = answer.trim().toLowerCase();
         answer = answer.replace(/-|\s/g, ""); // removes hyphens and white space 
         console.log("my regExp answer " + answer);
     
-    
+        // If player was correct
         if (userAnswer === answer) {
           console.log('winner');
           messageArea.innerHTML = `<p>Congratulations!</p>`;
@@ -263,7 +263,7 @@ function playGame() {
           stopBtn.removeEventListener('click', stopGenerator);
     
           gameLevel++;
-    
+          // If player game level exceeds the games total levels
           if (gameLevel > 3) {
     
             startBtn.remove();
@@ -275,11 +275,11 @@ function playGame() {
     
             return;
           }
-    
+          // Display next level button if player was correct
           document.getElementById('userAnswer').innerHTML = `<button id='nextLevelBtn' class="button">Next Level</button></p>`;
           let nextLevelBtn = document.getElementById('nextLevelBtn');
           nextLevelBtn.addEventListener('click', nextLevel);
-    
+          // If player was incorrect and has more than one remaining attempt
         } else if (userAnswer != answer && attempts >= 1) {
           console.log('not quite!');
           removeUserInput();
@@ -298,7 +298,7 @@ function playGame() {
           updateAttempts();
     
           generatorStarted = true;
-    
+          // If player was incorrect and has no remaining attempts
           if (userAnswer != answer && attempts <= 0) {
             messageArea.innerHTML = `<p>Game Over!</p>`;
     
@@ -308,6 +308,11 @@ function playGame() {
         }
     }
     
+
+    /** This function displays the players remaining attempts*/
+    function updateAttempts() {
+        attemptsRemaining.innerHTML = `<h4>Attempts Remaining: ` + `${attempts}</h4>`;
+    } 
 
 
     /** This function creates the gameboard table.
