@@ -1,0 +1,125 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  p {
+     font-size: 150%;
+    }
+  
+  table {
+    width: 300px;
+    height: 200px;
+    
+    border-spacing: 0px;
+  }
+  
+  
+  
+  td {
+    background-color: blue;
+    font-size: 150%;
+    text-align: center;
+    color: white;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .highlight {
+    background-color: white;
+  }
+  
+  .ll {
+    background-color: red;
+  }
+  
+  #messageArea {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    margin-top: 5px;
+    height: 30px;
+    color: blueviolet;
+  }
+  
+  #userAnswer {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+    height: 70px;
+    color: blueviolet;
+  }
+  
+  #buttons {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    color: blueviolet;
+  }
+  
+  #userInputArea {
+    margin-bottom: 5px;
+    width: 80%; 
+    height: 30px;
+    }
+  
+  .button {
+    font-size: 18px;
+    width: 150px;
+    height: 40px;
+    
+  }
+  
+  #title {
+    text-align: center;
+  } 
+  
+  #playBtn {
+    width: 80%;
+    background-color: aqua;
+    color: purple;
+  }
+  #startBtn {
+    background-color: lightgreen;
+    color: white;
+    }
+  #stopBtn {
+    background-color: red;
+    color: white;
+    }
+  #userBtn {
+    margin-bottom: 20px;
+    background-color: orange;
+    color: white;
+    }
+  #nextLevelBtn {
+    margin-top: 50px;
+    background-color: purple;
+    color: white;
+  }
+  
+  .revealed {
+    opacity: 0;
+  }
+  
+  #currentLevel {
+    margin-top: 10px;
+    display: inline-block;
+    margin-left: 20px;
+  }
+  
+   #attemptsRemaining {
+    margin-top: 10px;
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 55px;
+  }
+
+  /* This was used in conjunction with javascript development files 07 - 09 */

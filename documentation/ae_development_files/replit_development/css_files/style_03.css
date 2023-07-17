@@ -1,0 +1,135 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: silver;
+  }
+  
+  p {
+      font-size: 150%;
+    }
+  
+  #game-area {
+    text-align: center;
+  }
+  
+  table {
+    width: 100%;
+    height: auto;
+    border-spacing: 0;
+  }
+  
+  #tileTable {
+    background-position: bottom;
+    ;
+    background-size: 100%;
+  }
+  
+  td {
+    background-color: blue;
+    font-size: 200%;
+    text-align: center;
+    color: white;
+    opacity: 0.5; 
+  }
+  
+  .highlight {
+    background-color: white;
+  }
+  
+  .selectorLight {
+    background-color: red;
+  }
+  
+  #title {
+    text-align: center;
+  } 
+  
+  #messageArea {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    height: 50px;
+    color: blue;
+  }
+  
+  #userAnswer {
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    height: 100px;
+    color: blue;
+  }
+  
+  #buttons {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    color: blue;
+  }
+  
+  #userInputArea {
+    margin-bottom: 10px;
+    width: 80%; 
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    }
+  
+  .button {
+    margin-top: 10px;
+    border: none;
+    font-size: 18px;
+    width: 150px;
+    height: 40px;
+    border-radius: 25px;
+  }
+  #startBtn {
+    background-color: lightgreen;
+    color: white;
+    }
+  
+  #stopBtn {
+    background-color: red;
+    color: white;
+    }
+  
+  #userBtn {
+    background-color: orange;
+    color: white;
+    }
+  
+  #nextLevelBtn {
+    margin-top: 50px;
+    background-color: purple;
+    color: white;
+    }
+  
+  #playBtn {
+    width: 30%;
+    background-color: aqua;
+    color: white;
+  }
+  
+  #currentLevel {
+    color: blue;
+    margin-top: 10px;
+    display: inline-block;
+    margin-left: 0px;
+  }
+  
+   #attemptsRemaining {
+     color: blue;
+    margin-top: 10px;
+    display: inline-block;
+    margin-right: 0px;
+  }
+  
+  .revealed {
+    opacity: 0;
+  }
+
+   /* This was used in conjunction with javascript development files 10 - 11 */
