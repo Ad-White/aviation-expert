@@ -63,20 +63,15 @@ function playGame() {
    *  It then calls to functions reveal, then askForGuess.
    */
   function startGenerator() {
-
-      if (generatorStarted === true && attempts > 0 && gameLevel <= 3) {
-        messageArea.innerHTML = `<p>Press Stop To Select Your Tile</p>`;
-  
-        stopBtn.addEventListener('click', stopGenerator);
-        tileGenerator();
-  
-      } else {
-        generatorStarted = false;
-  
-        console.log('generator stopped');
-        reveal();
-        askForGuess();
-      }
+    if (generatorStarted === true && attempts > 0 && gameLevel <= 3) {
+      messageArea.innerHTML = `<p>Press Stop To Select Your Tile</p>`;
+      stopBtn.addEventListener('click', stopGenerator);
+      tileGenerator();
+    } else {
+      generatorStarted = false;
+      reveal();
+      askForGuess();
+    }
   }
   
   
@@ -93,15 +88,8 @@ function playGame() {
    *  from being selected again throughout the rest of the game.
    */
   function setBackgroundImage() {
-
     currentGameImage = gameImageSelection[Math.floor(Math.random() * gameImageSelection.length)];
-    console.log("current game image now " + currentGameImage.gameImage);
-
-    console.log("this is the chosenImageName " + currentGameImage.gameImageName);
-
     answer = currentGameImage.gameImageName;
-    console.log("this is the answer " + answer);
-
     photographer = currentGameImage.photographer;
     
     let setDisplay = document.getElementById('tileTable');
@@ -117,7 +105,6 @@ function playGame() {
     if (currentGameImage > -1) {
       gameImageSelection.splice(currentGameImage, 1);
     }
-    console.log(gameImageSelection);
   }
 
 
@@ -130,17 +117,14 @@ function playGame() {
    *  used in the function, stopGenerator.
    */
   function tileGenerator() {
+    // eventListener is removed to prevent multiple starting of the generator
+    startBtn.removeEventListener('click', startGenerator);
 
-      // eventListener is removed to prevent multiple starting of the generator
-      startBtn.removeEventListener('click', startGenerator);
+    let tiles = document.querySelectorAll(".tile" && ".inPlay");
 
-      let tiles = document.querySelectorAll(".tile" && ".inPlay");
-
-      let randomTile = tiles[Math.floor(Math.random() * tiles.length)];
-      addHighLight(randomTile);
-      selectedTile = randomTile;
-
-      console.log(randomTile);
+    let randomTile = tiles[Math.floor(Math.random() * tiles.length)];
+    addHighLight(randomTile);
+    selectedTile = randomTile;
   }
 
 
@@ -159,8 +143,6 @@ function playGame() {
       tile.classList.remove("highlight");
       clearTimeout(waitAbit);
 
-      console.log("tile id:" + tile.id);
-
       if (stopBtn === true) {
         stopGenerator();
       } else {
@@ -177,11 +159,8 @@ function playGame() {
    */
   function stopGenerator() {
     selectedTile.classList.add('selectorLight')
-    console.log(selectedTile);
     stopBtn.removeEventListener('click', stopGenerator);
-
     generatorStarted = false;
-  
   }   
 
   
@@ -191,10 +170,7 @@ function playGame() {
    *  removes the existing class of .inplay.
    */
   function reveal() {
-
     highlightedTilesList.push(selectedTile);
-    console.log(highlightedTilesList);
-
     selectedTile.classList.add('revealed');
     selectedTile.classList.remove('inPlay');
     stopBtn.addEventListener('click', stopGenerator);
@@ -211,7 +187,6 @@ function playGame() {
     msg.innerHTML = `<p>Please Enter Your Guess<br>Or Skip...</p>`;
 
     addUserInput();
-  
   }
   
 
@@ -219,7 +194,6 @@ function playGame() {
    *  It also adds a submit / skip button with event listener.
   */
   function addUserInput() {
-
     document.getElementById("userAnswer").innerHTML = `<input type="text" style="font-size: 20px;" id='userInputArea' placeholder="Enter Guess Here..."></input><br><button id="userBtn" class="button">Guess / Skip</button>`;
     userBtn.addEventListener('click', checkAnswer);
   }
@@ -227,7 +201,6 @@ function playGame() {
   
   /** This function removes any content from the userAnswer element. */
   function removeUserInput() {
-
     document.getElementById('userAnswer').innerHTML = "";
   }
 
@@ -247,24 +220,16 @@ function playGame() {
     // removes leading and/or trailing white speace, then sets to lower case
     userAnswer = document.getElementById('userInputArea').value.trim().toLowerCase();
     userAnswer = userAnswer.replace(/-|\s/g, ""); // removes hyphens and white space 
-    console.log("my regExp userAnswer " + userAnswer);
     
     // removes leading and/or trailing white speace, then sets to lower case
     answer = answer.trim().toLowerCase();
     answer = answer.replace(/-|\s/g, ""); // removes hyphens and white space 
-    console.log("my regExp answer " + answer);
 
     // If player was correct
     if (userAnswer === answer) {
-      console.log('winner');
       messageArea.innerHTML = `<p>Congratulations!</p>`;
-
       finalReveal();
-      
-      console.log(userAnswer);
       stopGenerator();
-
-      console.log(`game level: ${gameLevel}`);
 
       messageArea.innerHTML += `<p>Level ${gameLevel} Completed!</p>`;
       startBtn.removeEventListener('click', startGenerator);
@@ -289,11 +254,10 @@ function playGame() {
       nextLevelBtn.addEventListener('click', nextLevel);
       // If player was incorrect and has more than one remaining attempt
     } else if (userAnswer != answer && attempts >= 1) {
-      console.log('not quite!');
       removeUserInput();
       messageArea.innerHTML = `<p>Better Luck Next Time!<br>Press Start To Try Again...</p>`;
       attempts--;
-      console.log(attempts);
+
       if (attempts != 1) {
         messageArea.innerHTML += `<p>You Have ${attempts} Attempts Remaining.</p>`;
       } else {
@@ -301,10 +265,9 @@ function playGame() {
       }
 
       startBtn.addEventListener('click', startGenerator);
-      
       updateAttempts();
-
       generatorStarted = true;
+
       // If player was incorrect and has no remaining attempts
       if (userAnswer != answer && attempts <= 0) {
         messageArea.innerHTML = `<p>Game Over!</p>`;
@@ -336,8 +299,6 @@ function playGame() {
     }
 
     startBtn.addEventListener('click', startGenerator);
-    
-
     generatorStarted = true;
 
     document.getElementById('messageArea').innerHTML = `<p>Press Start To Play</p>`;
@@ -397,7 +358,6 @@ function playGame() {
    *  It adds this info. to the footer of the page and includes a link to the website, Pixabay.
   */
   function displayPhotographer() {
-  console.log("this is the photographer of the gameImage " + photographer);
   document.getElementById('photographer').innerHTML = `<h6>Photo by ` + photographer + ` via <a href="https://pixabay.com/" target=_"blank">Pixabay</a></h6>`;
   }
   
@@ -410,7 +370,7 @@ function playGame() {
       
     let quitArea = document.getElementById('quit');
     quitArea.innerHTML = 
-
+    
     `<button class="button" id="contBtn">Continue</button>
     <button class="button" id="exitBtn">Exit</button>`;
 
