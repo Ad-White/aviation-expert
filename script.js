@@ -22,18 +22,18 @@ function playGame() {
   let highlightedTilesList = [];
   
   const gameImageSelection = [
-    { gameImageName: 'a-10 thunderbolt', gameImage: 'url(images/a-10-thunderbolt_12019.jpg)', photographer: '12019' },
-    { gameImageName: 'apache', gameImage: 'url(images/apache-longbow_mrminibike.jpg)', photographer: 'mrminibike' },
-    { gameImageName: 'avro vulcan', gameImage: 'url(images/avro-vulcan_neico.jpg)', photographer: 'neico' },
-    { gameImageName: 'black hawk', gameImage: 'url(images/black-hawk_AngieJohnston.jpg)', photographer: 'AngieJohnston' },
-    { gameImageName: 'blackbird', gameImage: 'url(images/blackbird_wikiImages.jpg)', photographer: 'wikiImages' },
-    { gameImageName: 'chinook', gameImage: 'url(images/chinook_sjr4x4.jpg)' },
-    { gameImageName: 'f-15', gameImage: 'url(images/f-15_Defence-Imagery.jpg)', photographer: 'Defence-Imagery' },
-    { gameImageName: 'f-18', gameImage: 'url(images/f-18-hornet_Military_Material.jpg)', photographer: 'Military_Material' },
-    { gameImageName: 'f-22 raptor', gameImage: 'url(images/f22-raptor_陆龙.jpg)', photographer: '陆龙' },
-    { gameImageName: 'lancaster', gameImage: 'url(images/lancaster_JonPauling.jpg)', photographer: 'JonPauling' },
-    { gameImageName: 'english electric lightning', gameImage: 'url(images/not_sure_english-electric-lightning_Up-Free.jpg)', photographer: 'Up-Free' },
-    { gameImageName: 'osprey', gameImage: 'url(images/osprey_sjr4x4.jpg)', photographer: 'sjr4x4' },
+    { gameImageName: 'a-10 thunderbolt', gameImage: 'url(assets/images/a-10-thunderbolt_12019.jpg)', photographer: '12019' },
+    { gameImageName: 'apache', gameImage: 'url(assets/images/apache-longbow_mrminibike.jpg)', photographer: 'mrminibike' },
+    { gameImageName: 'avro vulcan', gameImage: 'url(assets/images/avro-vulcan_neico.jpg)', photographer: 'neico' },
+    { gameImageName: 'black hawk', gameImage: 'url(assets/images/black-hawk_AngieJohnston.jpg)', photographer: 'AngieJohnston' },
+    { gameImageName: 'blackbird', gameImage: 'url(assets/images/blackbird_wikiImages.jpg)', photographer: 'wikiImages' },
+    { gameImageName: 'chinook', gameImage: 'url(assets/images/chinook_sjr4x4.jpg)' },
+    { gameImageName: 'f-15', gameImage: 'url(assets/images/f-15_Defence-Imagery.jpg)', photographer: 'Defence-Imagery' },
+    { gameImageName: 'f-18', gameImage: 'url(assets/images/f-18-hornet_Military_Material.jpg)', photographer: 'Military_Material' },
+    { gameImageName: 'f-22 raptor', gameImage: 'url(assets/images/f22-raptor_陆龙.jpg)', photographer: '陆龙' },
+    { gameImageName: 'lancaster', gameImage: 'url(assets/images/lancaster_JonPauling.jpg)', photographer: 'JonPauling' },
+    { gameImageName: 'english electric lightning', gameImage: 'url(assets/images/not_sure_english-electric-lightning_Up-Free.jpg)', photographer: 'Up-Free' },
+    { gameImageName: 'osprey', gameImage: 'url(assets/images/osprey_sjr4x4.jpg)', photographer: 'sjr4x4' },
     { gameImageName: 'sea harrier', gameImage: 'url(assets/images/sea_harrier_12019.jpg)', photographer: '12019' },
     { gameImageName: 'spitfire', gameImage: 'url(assets/images/spitfire_JonPauling.jpg)', photographer: 'JonPauling' },
     { gameImageName: 'tornado', gameImage: 'url(assets/images/tornado_StevePortugal.jpg)', photographer: 'StevePortugal' }
@@ -370,7 +370,7 @@ function playGame() {
       
     let quitArea = document.getElementById('quit');
     quitArea.innerHTML = 
-    
+
     `<button class="button" id="contBtn">Continue</button>
     <button class="button" id="exitBtn">Exit</button>`;
 
