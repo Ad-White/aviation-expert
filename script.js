@@ -315,6 +315,26 @@ function playGame() {
   } 
 
 
+  /** This function selects any tiles not revealed within the game.
+   *  For those tiles with classes .tile and .inPlay, it removes the .inPlay
+   *  class, then applies the class .revealed.
+   *  Causing the background image to become fully visible.
+   *  The function then pushes each tile into the highlightedTilesList
+   *  array of objects.
+   *  This causes them to become 'reset' if another game begins.
+   */
+  function finalReveal() {
+    
+    let remainingTiles = document.querySelectorAll(".tile" && ".inPlay");
+     for (let t=0; t < remainingTiles.length; t++) {
+       remainingTiles[t].classList.remove('inPlay');
+       remainingTiles[t].classList.add('revealed');
+ 
+       highlightedTilesList.push(remainingTiles[t]);
+     }
+   }
+   
+
   /** This function creates the gameboard table.
    *  It also adds the message area, user answer area.
    *  Plus player button controls, current level and attempts 
