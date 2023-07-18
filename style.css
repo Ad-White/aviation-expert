@@ -4,7 +4,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     text-align: center;
     background-color: silver;
-    color: blue;
+    color: #0000A8;
   }
   
   .footer {
@@ -68,8 +68,7 @@ body {
   
   #userAnswer {
     text-align: center;
-    width: 40%;
-    min-width: 150px;
+    width: 50%;
     margin: auto;
     padding-bottom: 10px;
     height: auto;
@@ -103,12 +102,12 @@ body {
   }
   
   #stopBtn {
-    background-color: red;
+    background-color: #B30000;
     color: white;
   }
   
   #userBtn {
-    background-color: orange;
+    background-color: #FFB833;
     color: white;
     height: auto;
   }
@@ -120,8 +119,8 @@ body {
   }
   
   #quitBtn, #contBtn, #exitBtn{
-    background-color: blue;
-    color: orange;
+    background-color: #0000A8;
+    color: #FFB833;
   }
   
   #playBtn {
