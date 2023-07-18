@@ -125,7 +125,7 @@ function playGame() {
     // eventListener is removed to prevent multiple starting of the generator
     startBtn.removeEventListener('click', startGenerator);
 
-    let tiles = document.querySelectorAll(".tile" && ".inPlay");
+    let tiles = document.querySelectorAll('.tile' && '.inPlay');
 
     let randomTile = tiles[Math.floor(Math.random() * tiles.length)];
     addHighLight(randomTile);
@@ -141,11 +141,11 @@ function playGame() {
    *  If the stop button hasn not been pressed, the startGenerator fucntion is called.
    */
   function addHighLight(tile) {
-    tile.classList.add("highlight");
+    tile.classList.add('highlight');
 
     const waitAbit = setTimeout(removeHighlight, 300);
     function removeHighlight() {
-      tile.classList.remove("highlight");
+      tile.classList.remove('highlight');
       clearTimeout(waitAbit);
 
       if (stopBtn === true) {
@@ -199,7 +199,7 @@ function playGame() {
    *  It also adds a submit / skip button with event listener.
   */
   function addUserInput() {
-    document.getElementById("userAnswer").innerHTML = `<input type="text" style="font-size: 20px;" id='userInputArea' placeholder="Enter Guess Here..."></input>
+    document.getElementById('userAnswer').innerHTML = `<input type="text" style="font-size: 20px;" id="userInputArea" placeholder="Enter Guess Here..."></input>
     <br><button id="userBtn" class="button">Guess / Skip</button>`;
     let userBtn = document.getElementById('userBtn');
     userBtn.addEventListener('click', checkAnswer);
@@ -303,8 +303,8 @@ function playGame() {
     updateCurrentLevel();
 
     for (let i = 0; i < highlightedTilesList.length; i++) {
-      highlightedTilesList[i].classList.remove("revealed");
-      highlightedTilesList[i].classList.remove("selectorLight");
+      highlightedTilesList[i].classList.remove('revealed');
+      highlightedTilesList[i].classList.remove('selectorLight');
       highlightedTilesList[i].classList.add('inPlay');
     }
 
@@ -356,7 +356,7 @@ function playGame() {
    */
   function finalReveal() {
     
-    let remainingTiles = document.querySelectorAll(".tile" && ".inPlay");
+    let remainingTiles = document.querySelectorAll('.tile' && '.inPlay');
     for (let t=0; t < remainingTiles.length; t++) {
       remainingTiles[t].classList.remove('inPlay');
       remainingTiles[t].classList.add('revealed');
