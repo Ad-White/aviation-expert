@@ -63,13 +63,13 @@ I have chosen what I hope to be colours that will be intuitive for the player to
 
 - `#c0c0c0` - silver - used for background.
 - `#0000ff` - blue - used for game tiles.
-- `#0000ff` - blue - used for primary text.
+- `#0000A8` - blue - used for primary text.
 - `#ffffff` - white - used for button text.
 - `#008000` - green - used for start button.
-- `#ff0000` - red - used for stop button.
-- `#ffa500` - orange - used for the guess / skip button.
+- `#B30000` - red - used for stop button.
+- `#FFB833` - orange - used for the guess / skip button.
 - `#800080` - purple - used for next level button.
-- `#0000ff` - blue background + `#ffa500` - orange text - used for quit and continue buttons.
+- `#0000A8` - blue background + `#FFB833` - orange text - used for quit and continue buttons.
 
 ### Typography
  
