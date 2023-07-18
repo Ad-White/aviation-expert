@@ -278,9 +278,11 @@ function playGame() {
 
       // If player was incorrect and has no remaining attempts
       if (userAnswer != answer && attempts <= 0) {
-        messageArea.innerHTML = `<p>Game Over!</p>`;
-
-        startBtn.removeEventListener('click', startGenerator);
+        messageArea.innerHTML = `<h2>Game Over!</h2>
+        <br>
+        <p>Press Quit Then Exit<br>To Try Again</p>`;
+        startBtn.remove();
+        stopBtn.remove();   
         return;
       }
     }
