@@ -370,7 +370,7 @@ function playGame() {
    *  It adds this info. to the footer of the page and includes a link to the website, Pixabay.
   */
   function displayPhotographer() {
-  document.getElementById('photographer').innerHTML = `<h6>Photo by ` + photographer + ` via <a href="https://pixabay.com/" target=_"blank">Pixabay</a></h6>`;
+  document.getElementById('photographer').innerHTML = `<h5>Photo by ` + photographer + ` via <a href="https://pixabay.com/" target=_"blank">Pixabay</a></h5>`;
   }
   
 
