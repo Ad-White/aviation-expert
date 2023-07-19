@@ -51,6 +51,31 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | Chrome | ![screenshot](documentation/chrome_desktop_home.png) | ![screenshot](documentation/chrome_desktop_start.png) | ![screenshot](documentation/chrome_desktop_guess.png) | ![screenshot](documentation/chrome_desktop_answer_incorrect.png) | ![screenshot](documentation/chrome_desktop_next_level.png) | ![screenshot](documentation/chrome_desktop_game_over.png) | ![screenshot](documentation/chrome_desktop_game_completed.png) | ![screenshot](documentation/chrome_desktop_quit.png) | Works as expected |
 | Safari | ![screenshot](documentation/safari_laptop_home.png) | ![screenshot](documentation/safari_laptop_start.png) | ![screenshot](documentation/safari_laptop_guess.png) | ![screenshot](documentation/safari_laptop_answer_incorrect.png) | ![screenshot](documentation/safari_laptop_next_level.png) | ![screenshot](documentation/safari_laptop_game_over.png) | ![screenshot](documentation/safari_laptop_game_completed.png) | ![screenshot](documentation/safari_laptop_quit.png) | Works as expected | 
-| Firefox |![screenshot](documentation/firefox_desktop_home.png) | ![screenshot](documentation/firefox_desktop_start.png) | ![screenshot](documentation/firefox_desktop_guess
-.png) | ![screenshot](documentation/firefox_desktop_answer_incorrect.png) | ![screenshot](documentation/firefox_desktop_next_level.png) | ![screenshot](documentation/firefox_desktop_game_over.png) | ![screenshot](documentation/firefox_desktop_game_completed.png) | ![screenshot](documentation/firefox_desktop_quit.png) | Works as expected | 
+| Firefox |![screenshot](documentation/firefox_desktop_home.png) | ![screenshot](documentation/firefox_desktop_start.png) | ![screenshot](documentation/firefox_desktop_guess.png) | ![screenshot](documentation/firefox_desktop_answer_incorrect.png) | ![screenshot](documentation/firefox_desktop_next_level.png) | ![screenshot](documentation/firefox_desktop_game_over.png) | ![screenshot](documentation/firefox_desktop_game_completed.png) | ![screenshot](documentation/firefox_desktop_quit.png) | Works as expected | 
+
+
+## Responsiveness
+
+I've tested my deployed project on multiple devices to check for responsiveness issues.
+
+| Device | Home | Game Start | Guess | Incorrect Answer / Skip | Next Level | Game Over | Game Completed | Quit - Continue / Exit |  Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
+| Mobile | ![screenshot](documentation/safari_mobile_home.png) | ![screenshot](documentation/safari_mobile_start.png) | ![screenshot](documentation/safari_mobile_guess.png) | ![screenshot](documentation/safari_mobile_answer_incorrect.png) | ![screenshot](documentation/safari_mobile_next_level.png) | ![screenshot](documentation/safari_mobile_game_over.png) | ![screenshot](documentation/safari_mobile_game_completed.png) | ![screenshot](documentation/safari_mobile_quit.png) | Works as expected |
+| Tablet (DevTools) - Horizontal | ![screenshot](documentation/chrome_tablet_home.png) | ![screenshot](documentation/chrome_tablet_start.png) | ![screenshot](documentation/chrome_tablet_guess.png) | ![screenshot](documentation/chrome_tablet_answer_incorrect.png) | ![screenshot](documentation/chrome_tablet_next_level.png) | ![screenshot](documentation/chrome_tablet_game_over.png) | ![screenshot](documentation/chrome_tablet_game_completed.png) | ![screenshot](documentation/chrome_tablet_quit.png) | Works as expected |
+| Desktop | ![screenshot](documentation/chrome_desktop_home.png) | ![screenshot](documentation/chrome_desktop_start.png) | ![screenshot](documentation/chrome_desktop_guess.png) | ![screenshot](documentation/chrome_desktop_answer_incorrect.png) | ![screenshot](documentation/chrome_desktop_next_level.png) | ![screenshot](documentation/chrome_desktop_game_over.png) | ![screenshot](documentation/chrome_desktop_game_completed.png) | ![screenshot](documentation/chrome_desktop_quit.png) |  Works as expected |
+
+
+## Lighthouse Audit
+
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+
+| Status | Test Used | Size | Screenshot | Notes |
+| --- | --- | --- | --- | --- |
+| Start | Navigation | Mobile | ![screenshot](documentation/lighthouse_navigation_mobile.png) | No warnings |
+| Start | Navigation | Desktop | ![screenshot](documentation/lighthouse_navigation_desktop.png) | No warnings |
+| Game | Snapshot | Mobile | ![screenshot](documentation/lighthouse_snapshot_mobile.png) | No warnings |
+| Game | Snapshot | Desktop | ![screenshot](documentation/lighthouse_snapshot_desktop.png) | No warnings |
+| Game In Play | Timespan | Mobile | ![screenshot](documentation/lighthouse_timespan_mobile.png) | Duration: 1 level - No warnings |
+| Game In Play | Timespan| Desktop | ![screenshot](documentation/lighthouse_timespan_desktop.png) | Duration: 1 level - No warnings |
+
 
