@@ -79,3 +79,73 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Game In Play | Timespan| Desktop | ![screenshot](documentation/validation/lighthouse_timespan_desktop.png) | Duration: 1 level - No warnings |
 
 
+## Manual Testing
+
+Defensive programming was manually tested with the below user acceptance testing:
+
+| Game State | User Action | Expected Result | Pass/Fail | Comments |
+| --- | --- | --- | --- | --- |
+| Home Page | | | | |
+| | Click on Play Game button | Clear existing screen and load new game | Pass | |
+| Game Page | | | | |
+| | Click on Start button | Random Tile Generator starts | Pass | |
+| | Click on Stop button to stop Random Tile Generator | Random Tile Generator stops | Pass | |
+| | Click on Submit/Skip button to Submit a guess | Answer is submitted and check if correct or not | Pass | |
+| | Click on Submit/Skip button to skip an attempt | Empty guess is submitted. Game displays message when an answer is incorrect. Then an attempt is removed | Pass | |
+| | Click on Submit/Skip button to Submit with an incorrect guess | Answer is submitted. Game diplays message when an answer is incorrect. Then an attempt is removed | Pass | |
+| | Click on Submit/Skip button to Submit a correct guess | Answer is submitted. Then game displays message when answer is correct along with the Next Level button | Pass | |
+| | Click on Next Level button | Replaces current game screen with the next level | Pass | |
+| | Click on Quit button | Quit button is removed and replaced with two buttons, Continue and Exit | Pass | |
+| | Click on Continue button | The two buttons, Continue and Exit are removed and replaced with the Quit button | Pass | |
+| | Click on Exit button | The page reloads to the home page | Pass | |
+
+
+# Automatic Testing
+
+No automatic testing has been conducted, using the likes of Jest for example.
+I understand the benefits of automatic testing would be to ensure what the developer/s have designed, pass tests that wouldn't 
+necessarily show up through manual testing. Such as things less likely yet possible to occur
+when a piece of software is in use. E.g. testing a thousand key presses. 
+
+
+## User Story Testing
+
+| User Story | Screenshot - example |
+| --- | --- |
+| As a new site user, I would like to f.... | ![screenshot](documentation/*********.png) 
+
+| As a returning site user, I would like to .... | ![screenshot](documentation/*********.png) |
+
+
+## Bugs
+
+**Bug 01**
+- bug ..... 
+
+![screenshot](documentation/*********.png)
+
+**Bug 02**
+- bug .....
+
+![screenshot](documentation/*********.png)
+
+	
+**Fixed Bugs, Errors and Warnings**
+
+| Bug | Status |
+| --- | --- |
+| [ Bug 01 ] - bug ..... | Bug fixed |
+| [ Bug 02 ] - bug ..... | Bug fixed |
+
+
+## Unfixed Bugs, Errors and Warnings
+
+**Bug 04**
+- bug ..... 
+
+![screenshot](documentation/*********.png)
+
+
+Any remaining errors or warnings to my knowledge, are as a result of the validating software, trying to validate external libraries and/or frameworks.
+
+There are no remaining bugs that I am aware of.
