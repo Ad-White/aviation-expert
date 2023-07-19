@@ -71,11 +71,11 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 | Status | Test Used | Size | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| Start | Navigation | Mobile | ![screenshot](documentation/lighthouse_navigation_mobile.png) | No warnings |
-| Start | Navigation | Desktop | ![screenshot](documentation/lighthouse_navigation_desktop.png) | No warnings |
-| Game | Snapshot | Mobile | ![screenshot](documentation/lighthouse_snapshot_mobile.png) | No warnings |
-| Game | Snapshot | Desktop | ![screenshot](documentation/lighthouse_snapshot_desktop.png) | No warnings |
-| Game In Play | Timespan | Mobile | ![screenshot](documentation/lighthouse_timespan_mobile.png) | Duration: 1 level - No warnings |
-| Game In Play | Timespan| Desktop | ![screenshot](documentation/lighthouse_timespan_desktop.png) | Duration: 1 level - No warnings |
+| Start | Navigation | Mobile | ![screenshot](documentation/validation/lighthouse_navigation_mobile.png) | No warnings |
+| Start | Navigation | Desktop | ![screenshot](documentation/validation/lighthouse_navigation_desktop.png) | No warnings |
+| Game | Snapshot | Mobile | ![screenshot](documentation/validation/lighthouse_snapshot_mobile.png) | No warnings |
+| Game | Snapshot | Desktop | ![screenshot](documentation/validation/lighthouse_snapshot_desktop.png) | No warnings |
+| Game In Play | Timespan | Mobile | ![screenshot](documentation/validation/lighthouse_timespan_mobile.png) | Duration: 1 level - No warnings |
+| Game In Play | Timespan| Desktop | ![screenshot](documentation/validation/lighthouse_timespan_desktop.png) | Duration: 1 level - No warnings |
 
 
