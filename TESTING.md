@@ -41,3 +41,16 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate m
 | Congiguration Used For Test | ![screenshot](documentation/validation/jshint_config.png) | ES6 setting used |
 | script.js - Inital Report| ![screenshot](documentation/validation/jshint_initial_report.png) | Two warnings, eight undefined variables |
 | script.js - Final Report| ![screenshot](documentation/validation/jshint_final_report.png) | Final Result |
+
+
+## Browser Compatibility
+
+I've tested my deployed project on multiple browsers to check for compatibility issues.
+
+| Browser | Home | Game Start | Guess | Incorrect Answer / Skip | Next Level | Game Over | Game Completed | Quit - Continue / Exit |  Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
+| Chrome | ![screenshot](documentation/chrome_desktop_home.png) | ![screenshot](documentation/chrome_desktop_start.png) | ![screenshot](documentation/chrome_desktop_guess.png) | ![screenshot](documentation/chrome_desktop_answer_incorrect.png) | ![screenshot](documentation/chrome_desktop_next_level.png) | ![screenshot](documentation/chrome_desktop_game_over.png) | ![screenshot](documentation/chrome_desktop_game_completed.png) | ![screenshot](documentation/chrome_desktop_quit.png) | Works as expected |
+| Safari | ![screenshot](documentation/safari_laptop_home.png) | ![screenshot](documentation/safari_laptop_start.png) | ![screenshot](documentation/safari_laptop_guess.png) | ![screenshot](documentation/safari_laptop_answer_incorrect.png) | ![screenshot](documentation/safari_laptop_next_level.png) | ![screenshot](documentation/safari_laptop_game_over.png) | ![screenshot](documentation/safari_laptop_game_completed.png) | ![screenshot](documentation/safari_laptop_quit.png) | Works as expected | 
+| Firefox |![screenshot](documentation/firefox_desktop_home.png) | ![screenshot](documentation/firefox_desktop_start.png) | ![screenshot](documentation/firefox_desktop_guess
+.png) | ![screenshot](documentation/firefox_desktop_answer_incorrect.png) | ![screenshot](documentation/firefox_desktop_next_level.png) | ![screenshot](documentation/firefox_desktop_game_over.png) | ![screenshot](documentation/firefox_desktop_game_completed.png) | ![screenshot](documentation/firefox_desktop_quit.png) | Works as expected | 
+
