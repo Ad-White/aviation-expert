@@ -196,4 +196,101 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 - Perhaps include a series of aircraft silouettes as an alternative.
 
 
+### Accessibility
 
+I have designed this website with the intention of making it easy for all users to navigate and enjoy.
+I have tried to adhere to current best practices during the production of this website.
+I have tested the website using Google Lighthouse.
+I have implemented changes to my design as a response to any issues resulting from this testing.
+
+
+## Technologies Used
+
+### Languages Used
+
+HTML, CSS and JavaScript.
+
+### Frameworks, Libraries & Programs Used
+
+- [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
+- [Replit Mobile Application](https://replit.com/mobile) to work on this project from anywhere, anytime I wasn't at home.
+- [Visual Studio Code](https://https://code.visualstudio.com) to work on development when not using Replit.
+- [Google Fonts](https://fonts.google.com) used to import the font used within the site.
+- [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
+- [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
+amiresponsive
+- [GitHub](https://github.com) used for secure online code storage.
+- [GitHub Pages](https://pages.github.com) used for hosting the deployed front-end site.
+- [Gitpod](https://gitpod.io) used as a cloud-based IDE for development.
+- Google Dev Tools - Accessed from Google Chrome.
+
+## Deployment & Local Development
+
+### Deployment
+
+The site was deployed to GitHub Pages. The steps to deploy are as follows:
+- In the [GitHub repository](https://github.com/Ad-White/aviation-expert), navigate to the Settings tab 
+- From the source section drop-down menu, select the **Main** Branch, then click "Save".
+- The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+The live link can be found [here](https://ad-white.github.io/aviation-expert)
+
+### Local Deployment
+
+This project can be cloned or forked in order to make a local copy on your own system.
+
+#### Cloning
+
+You can clone the repository by following these steps:
+
+1. Go to the [GitHub repository](https://github.com/Ad-White/aviation-expert) 
+2. Locate the Code button above the list of files and click it 
+3. Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
+4. Open Git Bash or Terminal
+5. Change the current working directory to the one where you want the cloned directory
+6. In your IDE Terminal, type the following command to clone my repository:
+	- `git clone https://github.com/Ad-White/aviation-expert.git`
+7. Press Enter to create your local clone.
+
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Ad-White/aviation-expert)
+
+Please note that in order to directly open the project in Gitpod, you need to have the browser extension installed.
+A tutorial on how to do that can be found [here](https://www.gitpod.io/docs/configure/user-settings/browser-extension).
+
+#### Forking
+
+By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
+You can fork this repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/Ad-White/aviation-expert)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
+## Testing
+
+For all testing, please refer to the [TESTING.md](TESTING.md) file.
+
+## Credits
+
+### Content
+
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/) | entire site | responsive |
+| [W3Schools](https://www.w3schools.com/) | entire site | general resource |
+| [Mozilla Javascript Reference](https://developer.mozilla.org/) | entire site | general resource |
+| [Stackoverflow](https://stackoverflow.com/) | entire site | general resource |
+| [Pixabay](https://pixabay.com/) | entire site | photographs of aircraft |
+| [Markdown Builder by Tim Nelson](https://traveltimn.github.io/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
+
+### Media
+
+All photographs used throughout this site have been sourced from [Pixabay](https://pixabay.com/).
+Pixabay state there is no requirement to credit Pixabay or its content contributors.
+However, I feel it is of importance, so I have given attribution to both within the game itself.
+  
+### Acknowledgments
+
+- I would like to acknowledge .....
