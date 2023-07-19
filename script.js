@@ -397,7 +397,7 @@ function playGame() {
   /** The exitGame function reloads the current window
    *  and links back to this sites home page */  
   function exitGame() {
-    window.location.href = 'https://ad-white.github.io/aviation-expertTEST/';
+    window.location.href = 'https://ad-white.github.io/aviation-expert/';
     return;
   }
 
