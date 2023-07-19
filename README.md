@@ -1,5 +1,7 @@
 # Aviation Expert
 
+![screenshot](documentation/am_I_responsive.png)
+
 This website features a game consisting of knowledge, skill and luck.
 
 A fun guessing game where a player is given a number of attempts to try and select the tile of their choice using the random tile selector.
