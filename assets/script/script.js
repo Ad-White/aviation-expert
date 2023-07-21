@@ -199,7 +199,7 @@ function playGame() {
    *  It also adds a submit / skip button with event listener.
   */
   function addUserInput() {
-    document.getElementById('userAnswer').innerHTML = `<input type="text" style="font-size: 20px;" id="userInputArea" placeholder="Enter Guess Here..."></input>
+    document.getElementById('userAnswer').innerHTML = `<input type="text" style="font-size: 20px;" id="userInputArea" maxlength="30" placeholder="Enter Guess Here..."></input>
     <br><button id="userBtn" class="button">Guess / Skip</button>`;
     let userBtn = document.getElementById('userBtn');
     userBtn.addEventListener('click', checkAnswer);
