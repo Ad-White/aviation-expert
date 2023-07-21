@@ -8,10 +8,10 @@ Return back to the [README.md](README.md) file.
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate my HTML.
 
-To guarentee the testing of the tileTable code I had written.
-I copy and pasted the large html section from within the script.js file containing the tileTable.
-I then added that just under the welcome div within the game-area section in the index.html file.
-I copy and pasted the result of this as a direct input into the validator.
+To guarantee the testing of the `tileTable` code I had written.
+I copy and pasted the large html section from within the script.js file containing the `tileTable`.
+I then added that just under the welcome div within the `game-area` section in the index.html file.
+I copy and pasted the result of this and entered it as direct input into the validator.
 
 | Page | W3C URL | Screenshot | Notes |
 | --- | --- | --- | --- |
@@ -120,10 +120,11 @@ Results of testing the user answer text input for correct answers with extra spa
 # Automatic Testing
 
 No automatic testing has been conducted, using the likes of Jest for example.
-I understand the benefits of automatic testing would be to ensure that what the developer/s have designed, pass tests which wouldn't necessarily show up through manual testing.
-As well as being able to check for things in a fraction of the time, if compared to 
-the equivalent human testing. E.g. testing a thousand key presses. 
-In relation to this project, I can see that it would be of potential interest to test the total number of game combinations that can be achieved. At present, and after some research, I am led to believe that with a total set of fifteen images. With three being randomly selected as a sub-set. There are 455 combinations. This is something that would become very tedious and time consuming for a human to test!
+I understand the benefits of automated testing would be to ensure that what the developer/s have designed, pass tests which wouldn't necessarily show up through manual testing.
+As well as being able to check for things in a fraction of the time, if compared to the equivalent with human testing. E.g. Hugely repetitive or complex tasks/tests. Such as testing a thousand key presses or anything hugely labour intensive by human comparison.
+The benefits of automated testing also include the ability to conduct very precise tests. 
+Other benefits are the ability to use automated testing to increase the robustness of the code being produced, by conducting tests throughout the entire stages of development. This has the added effect of producing software in a more cost effective manner (both in terms of time and money), by eliminating potential problems before they occur, or at an earlier stage.
+In relation to this project, I can see that it would be of potential interest to test the total number of game combinations that can be achieved. At present, and after some research, I am led to believe that with a total set of fifteen images. With three being randomly selected as a sub-set. There are 455 combinations. This is something that would become very tedious and time consuming and too uncontrollable for a human to test properly.
 
 
 ## User Story Testing
@@ -145,7 +146,7 @@ In relation to this project, I can see that it would be of potential interest to
 
 ## Bugs
 
-These four bugs were particular areas of game development that had me scrathing my head!
+These four bugs were particular areas of game development that had me scratching my head!
 
 **Bug 01**
 - Stopping the generator
@@ -159,7 +160,7 @@ These four bugs were particular areas of game development that had me scrathing 
 
 **Bug 03**
 - Handling the user answer and comparing with accepted answer.
-- From the early stages of testing my answers against the accpeted answers. I found that any leading or trailing white space caused an otherwise correct answer to be false. Also, using capital letters in my answer didn't truely compare to the accepted answer.
+- From the early stages of testing my answers against the accpeted answers. I found that any leading or trailing white space caused an otherwise correct answer to be false. Also, using capital letters in my answer had a result of being incorrect.
 - I decided to use the functions, `trim()` and `toLowercase()` in order to control the user's entered answer. I have also used this as a way to control the accepted answer. This pattern matching is also intended to prevent any future additions/answers to the game, which may not follow the all lowercase format at present; from becoming an issue during gameplay. In addition to this, the regEx pattern implemented is to further reduce any future issues concerning both the user's answer and accepted answer.
 
 **Bug 04**

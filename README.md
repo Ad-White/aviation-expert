@@ -56,7 +56,7 @@ Also, the accepted answer has been kept relatively short and not overly in-depth
 
 ### Returning Site Users
 
-- As a returning site user, I would like to play the game again but, with a diffent set of aircraft.
+- As a returning site user, I would like to play the game again but, with a different set of aircraft.
 
 ## Design
 
@@ -154,14 +154,14 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 - Features a text input, with placeholder message, for the player to make their guess. 
 - Also includes a Guess / Skip button for the player to use.
 - This feature activates whenever the tile selector has stopped and revealed whatever it may be covering.
-- The text input also features a regEx pattern. This is to help cover possible user answers where they may enter a range of potential responces in naming what they see. Due to the nature of the subject. I am expecting hyphen or white space when writing the aircrafts name. E.g. F-18 Hornet, could also be entered as F18 Hornet, F18 hornet, f18 hornet, f-18 Hornet, etc. Any leading or trailing white space that has been entered is also removed from the users input. Their answer is also converted to all lowercase, before the comparison is made with the accepted answer. 
-- I have applied the same regEx pattern to the value received from the key `gameImageName` (the accepted answer to the assocciated image). This is to help achieve a direction comparison to the guess the user has entered. Also, the aim is to allow for more human like answers when filling the `gameImageSelection`. Making the inclusion of more aircraft or anyother subject matter easier. Either by myself or another developer in the future.
+- The text input also features a regEx pattern. This is to help cover possible user answers where the user may enter a range of potential responses in naming what they see, due to the nature of the subject. I am expecting hyphens and/or white space when writing the aircrafts name. E.g. F-18 Hornet, could also be entered as F18 Hornet, F18 hornet, f18 hornet, f-18 Hornet, etc. Any leading or trailing white space that has been entered is also removed from the users input. Their answer is also converted to all lowercase, before the comparison is made with the accepted answer. 
+- I have applied the same regEx pattern to the value received from the key `gameImageName` (the accepted answer to the assocciated image). This is to help achieve a direction comparison to the guess the user has entered. Also, the aim is to allow for more human like answers when filling the `gameImageSelection`. Making the inclusion of more aircraft or any other subject matter easier. Either by myself or another developer in the future.
 
 ![screenshot](documentation/features/user_input_area.png)
 
 **Quit Button**
 - This quit button is always available incase the user decides to stop playing the game.
-- It has a saftey mechanism of displaying two buttons.
+- It has a safety mechanism of displaying two buttons.
 - A button to allow the continuation of play, if they have changed their mind or have mistakenly pressed the button.
 - The other button to definitely exit.
 
@@ -177,12 +177,12 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 ![screenshot](documentation/features/photo_credit.png)
 
 **Multiple Level Design**
-- This game come with three levels in total. Each level has the ability to set the number of attempts required.
+- This game comes with three levels in total. Each level has the ability to set the number of attempts required.
 
 ![screenshot](documentation/features/multi_level.png)
 
 **404 Response Page**
-- This game come with a 404.html page, to help the user navigate back to the home page. 
+- This game comes with a 404.html page, to help the user navigate back to the home page. 
 Adding to a nicer user experience, if something unexpected goes wrong.
 
 ![screenshot](documentation/features/404_page.png)
@@ -196,7 +196,7 @@ Adding to a nicer user experience, if something unexpected goes wrong.
 
 **Increase or Decrease Difficulty**
 - Give the player the ability to set a pre-defined level of difficulty e.g. easy, medium, hard.
-- Future implementations could involve adding more than one accepted answer. So allowing for more indepth and accurate naming of the aircraft.
+- Future implementations could involve adding more than one accepted answer. So allowing for more in-depth and accurate naming of the aircraft.
 - Another idea is to increase the number of tiles as the levels increase.
 
 **Include More Levels**
@@ -209,7 +209,7 @@ Adding to a nicer user experience, if something unexpected goes wrong.
 - Perhaps include a series of aircraft silouettes as an alternative.
 
 **Create A Contact Page**
-- Create a contact page featuring Email.js to handle sending emails. I hope this give users the ability to contact me with any game related suggestions/requests. Or to able to inform me of any issues they may experience with the game.
+- Create a contact page featuring Email.js to handle sending emails. I hope this gives users the ability to contact me with any game related suggestions/requests. Or to able to inform me of any issues they may experience with the game.
 
 **Future Re-development Considerations**
 - During the development of this application. I took consideration to not naming anything "aviation" or "aircraft" in relation to the overall game/game engine related code and variables. 
@@ -237,10 +237,10 @@ HTML, CSS and JavaScript.
 - [Replit Mobile Application](https://replit.com/mobile) to work on this project from anywhere, anytime I wasn't at home.
 - [Visual Studio Code](https://https://code.visualstudio.com) to work on development when not using Replit.
 - [Google Fonts](https://fonts.google.com) used to import the font used within the site.
+- [Coolors](https://coolors.co) used to help generate colour chart.
 - [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
 - [AutoRegEx](https://www.autoregex.xyz) used to generate regEx used in checkAnswer function.
-- [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
-amiresponsive
+- [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`).
 - [GitHub](https://github.com) used for secure online code storage.
 - [GitHub Pages](https://pages.github.com) used for hosting the deployed front-end site.
 - [Gitpod](https://gitpod.io) used as a cloud-based IDE for development.
@@ -315,7 +315,8 @@ However, I feel it is of importance, so I have given attribution to both within 
   
 ### Acknowledgments
 
-- I would like to thank my Code Institute mentor, Rory Patrick Sheridan, for their invaluable feedback, support and encouragement throughout the development of this project.
+- I would like to thank my Code Institute mentor, Rory. For their invaluable feedback, support and encouragement throughout the development of this project.
 - I would like to thank my tutor, Nigel Edwards from the College Of West Anglia, for their guidance, suggestions and assistance at various stages of developing this project. 
-- I would like to thank those of my family and friends in helping to test this game. And providing valuable feedback.
-- I would like to thank my partner Michelle, for believing in me, and continuing to support me in making this transition into software development.
+- I would like to thank those of my family and friends who have helped to test this game. And providing valuable feedback.
+- I would like to thank my partner Chelle, for believing in me, and continuing to support me in making this transition into software development.
+- Last but not least, my brother Matt. For his inspiration to create this game and his invaluable aviation knowledge!
