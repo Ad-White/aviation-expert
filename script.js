@@ -27,21 +27,21 @@ function playGame() {
   let highlightedTilesList = [];
   
   const gameImageSelection = [
-    { gameImageName: 'a-10 thunderbolt', gameImage: 'url(assets/images/a-10-thunderbolt_12019.jpg)', photographer: '12019' },
-    { gameImageName: 'apache', gameImage: 'url(assets/images/apache-longbow_mrminibike.jpg)', photographer: 'mrminibike' },
-    { gameImageName: 'avro vulcan', gameImage: 'url(assets/images/avro-vulcan_neico.jpg)', photographer: 'neico' },
-    { gameImageName: 'black hawk', gameImage: 'url(assets/images/black-hawk_AngieJohnston.jpg)', photographer: 'AngieJohnston' },
-    { gameImageName: 'blackbird', gameImage: 'url(assets/images/blackbird_wikiImages.jpg)', photographer: 'wikiImages' },
+    { gameImageName: 'a-10 thunderbolt', gameImage: 'url(assets/images/a10_thunderbolt_12019.jpg)', photographer: '12019' },
+    { gameImageName: 'apache', gameImage: 'url(assets/images/apache_longbow_mrminibike.jpg)', photographer: 'mrminibike' },
+    { gameImageName: 'avro vulcan', gameImage: 'url(assets/images/avro_vulcan_neico.jpg)', photographer: 'neico' },
+    { gameImageName: 'black hawk', gameImage: 'url(assets/images/black_hawk_angiejohnston.jpg)', photographer: 'AngieJohnston' },
+    { gameImageName: 'blackbird', gameImage: 'url(assets/images/blackbird_wikiimages.jpg)', photographer: 'wikiImages' },
     { gameImageName: 'chinook', gameImage: 'url(assets/images/chinook_sjr4x4.jpg)' },
-    { gameImageName: 'f-15 eagle', gameImage: 'url(assets/images/f-15_Defence-Imagery.jpg)', photographer: 'Defence-Imagery' },
-    { gameImageName: 'f-18 hornet', gameImage: 'url(assets/images/f-18-hornet_Military_Material.jpg)', photographer: 'Military_Material' },
-    { gameImageName: 'f-22 raptor', gameImage: 'url(assets/images/f22-raptor_陆龙.jpg)', photographer: '陆龙' },
-    { gameImageName: 'lancaster', gameImage: 'url(assets/images/lancaster_JonPauling.jpg)', photographer: 'JonPauling' },
-    { gameImageName: 'f-86 sabre', gameImage: 'url(assets/images/f-86-sabre_Up-Free.jpg)', photographer: 'Up-Free' },
+    { gameImageName: 'f-15 eagle', gameImage: 'url(assets/images/f15_defence_imagery.jpg)', photographer: 'Defence-Imagery' },
+    { gameImageName: 'f-18 hornet', gameImage: 'url(assets/images/f18_hornet_military_material.jpg)', photographer: 'Military_Material' },
+    { gameImageName: 'f-22 raptor', gameImage: 'url(assets/images/f22_raptor_陆龙.jpg)', photographer: '陆龙' },
+    { gameImageName: 'lancaster', gameImage: 'url(assets/images/lancaster_jonpauling.jpg)', photographer: 'JonPauling' },
+    { gameImageName: 'f-86 sabre', gameImage: 'url(assets/images/f86_sabre_up_free.jpg)', photographer: 'Up-Free' },
     { gameImageName: 'osprey', gameImage: 'url(assets/images/osprey_sjr4x4.jpg)', photographer: 'sjr4x4' },
     { gameImageName: 'sea harrier', gameImage: 'url(assets/images/sea_harrier_12019.jpg)', photographer: '12019' },
-    { gameImageName: 'spitfire', gameImage: 'url(assets/images/spitfire_JonPauling.jpg)', photographer: 'JonPauling' },
-    { gameImageName: 'tornado', gameImage: 'url(assets/images/tornado_StevePortugal.jpg)', photographer: 'StevePortugal' }
+    { gameImageName: 'spitfire', gameImage: 'url(assets/images/spitfire_jonpauling.jpg)', photographer: 'JonPauling' },
+    { gameImageName: 'tornado', gameImage: 'url(assets/images/tornado_steveportugal.jpg)', photographer: 'StevePortugal' }
   ];
 
   setBackgroundImage();
