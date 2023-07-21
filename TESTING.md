@@ -81,7 +81,9 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 ## Manual Testing
 
-Defensive programming was manually tested with the below user acceptance testing:
+I have manually tested the game through its complete development.
+
+Manually tested with the below user acceptance testing:
 
 | Game State | User Action | Expected Result | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
@@ -98,23 +100,32 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click on Quit button | Quit button is removed and replaced with two buttons, Continue and Exit | Pass | |
 | | Click on Continue button | The two buttons, Continue and Exit are removed and replaced with the Quit button | Pass | |
 | | Click on Exit button | The page reloads to the home page | Pass | |
+| | Navigate to non existant page | The page loads the 404.html response page | Pass | |
 
 
 # Automatic Testing
 
 No automatic testing has been conducted, using the likes of Jest for example.
-I understand the benefits of automatic testing would be to ensure what the developer/s have designed, pass tests that wouldn't 
-necessarily show up through manual testing. Such as things less likely yet possible to occur
-when a piece of software is in use. E.g. testing a thousand key presses. 
+I understand the benefits of automatic testing would be to ensure that what the developer/s have designed, pass tests which wouldn't 
+necessarily show up through manual testing. As well as being able to check for things in a fraction of the time, if compared to 
+the equivalent human testing. E.g. testing a thousand key presses. 
 
 
 ## User Story Testing
 
+### User Story Testing - Returning Site Users
 | User Story | Screenshot - example |
 | --- | --- |
-| As a new site user, I would like to f.... | ![screenshot](documentation/*********.png) 
+| As a new site user, I would like to play a game and attempt to identify the aircraft being hidden by tiles. | ![screenshot](documentation/*********.png) 
+| As a new site user, I would like to be able to skip my attempt to guess, if I have no idea as to the aircrafts identity. | ![screenshot](documentation/*********.png) |
+| As a new site user, I would like to have multiple attempts of using the tile selector in order to try and guess the correct answer. | ![screenshot](documentation/*********.png) 
+| As a new site user, I would like to continue playing the game by having the option of trying a new level if my answer is correct. | ![screenshot](documentation/*********.png) 
+| As a new site user, I would like to be able to quit the game at any time if I wish. Or to change my mind and continue playing. | ![screenshot](documentation/*********.png) 
 
-| As a returning site user, I would like to .... | ![screenshot](documentation/*********.png) |
+### User Story Testing - Returning Site Users
+| User Story | Screenshot - example |
+| --- | --- |
+| As a returning site user, I would like to play the game again but, with a diffent set of aircraft. | ![screenshot](documentation/*********.png) 
 
 
 ## Bugs

@@ -175,6 +175,12 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 ![screenshot](documentation/features/multi_level.png)
 
+**404 Response Page**
+- This game come with a 404.html page, to help the user navigate back to the home page. 
+Adding to a nicer user experience, if something unexpected goes wrong.
+
+![screenshot](documentation/features/404_page.png)
+
 
 ### Future Implementations
 
@@ -184,8 +190,7 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 **Increase or Decrease Difficulty**
 - Give the player the ability to set a pre-defined level of difficulty e.g. easy, medium, hard.
-- Future implementations could involve adding more than one accepted answer. So allowing for 
-- more indepth and accurate naming of the aircraft.
+- Future implementations could involve adding more than one accepted answer. So allowing for more indepth and accurate naming of the aircraft.
 - Another idea is to increase the number of tiles as the levels increase.
 
 **Include More Levels**
