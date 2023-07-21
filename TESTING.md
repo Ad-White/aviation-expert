@@ -106,9 +106,10 @@ Manually tested with the below user acceptance testing:
 # Automatic Testing
 
 No automatic testing has been conducted, using the likes of Jest for example.
-I understand the benefits of automatic testing would be to ensure that what the developer/s have designed, pass tests which wouldn't 
-necessarily show up through manual testing. As well as being able to check for things in a fraction of the time, if compared to 
+I understand the benefits of automatic testing would be to ensure that what the developer/s have designed, pass tests which wouldn't necessarily show up through manual testing.
+As well as being able to check for things in a fraction of the time, if compared to 
 the equivalent human testing. E.g. testing a thousand key presses. 
+In relation to this project, I can see that it would be of potential interest to test the total number of game combinations that can be achieved. At present, and after some research, I am led to believe that with a total set of fifteen images. With three being randomly selected as a sub-set. There are 455 combinations. This is something that would become very tedious and time consuming for a human to test!
 
 
 ## User Story Testing
@@ -130,31 +131,44 @@ the equivalent human testing. E.g. testing a thousand key presses.
 
 ## Bugs
 
-**Bug 01**
-- bug ..... 
+These four bugs were particular areas of game development that had me scrathing my head!
 
-![screenshot](documentation/*********.png)
+**Bug 01**
+- Stopping the generator
+- Once I had figured out a way to make the tile generator select a tile at random, apply the relevant class and move on to select another. I couldn't get the generator to stop.
+- The solution I implemented was to create a variable, `generatorStarted` to act as a key-like mechanism to set the generator as either in an "On" or "Off" state.
 
 **Bug 02**
-- bug .....
+- Resetting tiles between levels
+- Once I had managed to get control over the generator. I wanted to build in some levels to the game. Which I managed to achieve after some attempts. However, now that a new game had started. All the previously uncovered tiles where still visible as transparent. Therefore, ruining the second level before the player could start the generator.
+- My solution to this problem was to create an array, `highlightedTilesList`. This held onto each of the players revealed tiles, which could then be manipulated with adding and removing classes before the next level began.
 
-![screenshot](documentation/*********.png)
+**Bug 03**
+- Handling the user answer and comparing with accepted answer.
+- From the early stages of testing my answers against the accpeted answers. I found that any leading or trailing white space caused an otherwise correct answer to be false. Also, using capital letters in my answer didn't truely compare to the accepted answer.
+- I decided to use the functions, `trim()` and `toLowercase()` in order to control the user's entered answer. I have also used this as a way to control the accepted answer. This pattern matching is also intended to prevent any future additions/answers to the game, which may not follow the all lowercase format at present; from becoming an issue during gameplay. In addition to this, the regEx pattern implemented is to further reduce any future issues concerning both the user's answer and accepted answer.
+
+**Bug 04**
+- "Jumping UI"
+- This is related to a valuable piece of feedback I received.
+- It is more noticable on tablet and desktop devices. The structure of the tile table, followed by the message area then, user answer area. Means that it causes the Start and Stop buttons to jump about with the inclusion of messages during game play. I could appreciate that this has the ability to lessen a players enjoyment.
+- I have therefore, swapped the `<div>` with `id="buttons"`, to now follow the `tileTable`, and then the message area. I hope this achieves the aim of lessening the interference with the user interface.
 
 	
 **Fixed Bugs, Errors and Warnings**
 
 | Bug | Status |
 | --- | --- |
-| [ Bug 01 ] - bug ..... | Bug fixed |
-| [ Bug 02 ] - bug ..... | Bug fixed |
+| [ Bug 01 ] - Stopping the generator | Bug fixed |
+| [ Bug 02 ] - Resetting tiles between levels | Bug fixed |
+| [ Bug 03 ] - Handling the user answer and comparing with accepted answer. | Bug fixed |
+| [ Bug 04 ] - "Jumping UI".  | Bug fixed |
 
 
 ## Unfixed Bugs, Errors and Warnings
 
-**Bug 04**
-- bug ..... 
-
-![screenshot](documentation/*********.png)
+One warning - Relates to the Lighthouse report. Use of large images, recommending the use of a more modern image format to decrease loading times/data usage on mobile devices.
+At present I haven't the technology to implement that change.
 
 
 Any remaining errors or warnings to my knowledge, are as a result of the validating software, trying to validate external libraries and/or frameworks.

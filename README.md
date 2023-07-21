@@ -150,6 +150,8 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 - Features a text input, with placeholder message, for the player to make their guess. 
 - Also includes a Guess / Skip button for the player to use.
 - This feature activates whenever the tile selector has stopped and revealed whatever it may be covering.
+- The text input also features a regEx pattern. This is to help cover possible user answers where they may enter a range of potential responces in naming what they see. Due to the nature of the subject. I am expecting hyphen or white space when writing the aircrafts name. E.g. F-18 Hornet, could also be entered as F18 Hornet, F18 hornet, f18 hornet, f-18 Hornet, etc. Any leading or trailing white space that has been entered is also removed from the users input. Their answer is also converted to all lowercase, before the comparison is made with the accepted answer. 
+- I have applied the same regEx pattern to the value received from the key `gameImageName` (the accepted answer to the assocciated image). This is to help achieve a direction comparison to the guess the user has entered. Also, the aim is to allow for more human like answers when filling the `gameImageSelection`. Making the inclusion of more aircraft or anyother subject matter easier. Either by myself or another developer in the future.
 
 ![screenshot](documentation/features/user_input_area.png)
 
@@ -202,6 +204,14 @@ Adding to a nicer user experience, if something unexpected goes wrong.
 - Include more aircraft of different types. e.g. small private planes, commercial aircraft, vintage aircraft, etc.
 - Perhaps include a series of aircraft silouettes as an alternative.
 
+**Create A Contact Page**
+- Create a contact page featuring Email.js to handle sending emails. I hope this give users the ability to contact me with any game related suggestions/requests. Or to able to inform me of any issues they may experience with the game.
+
+**Future Re-development Considerations**
+- During the development of this application. I took consideration to not naming anything "aviation" or "aircraft" in relation to the overall game/game engine related code and variables. 
+- I did this so as to only require re-naming, the game title, two messages within the game (the welcome text and game completed text). Then to simply replace the images and required answers for them, in order to create an entirely new game subject matter.
+- I have done this as in the future I aim to re-develop this game with cars as a theme. As I have now received a few requests from friends to do so.
+
 
 ### Accessibility
 
@@ -224,6 +234,7 @@ HTML, CSS and JavaScript.
 - [Visual Studio Code](https://https://code.visualstudio.com) to work on development when not using Replit.
 - [Google Fonts](https://fonts.google.com) used to import the font used within the site.
 - [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
+- [AutoRegEx](https://www.autoregex.xyz) used to generate regEx used in checkAnswer function.
 - [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
 amiresponsive
 - [GitHub](https://github.com) used for secure online code storage.
