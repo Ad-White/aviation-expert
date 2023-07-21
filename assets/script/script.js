@@ -1,3 +1,5 @@
+ /* jshint esversion: 11 */
+
 // This button starts the game
 let playBtn = document.getElementById('playBtn');
 playBtn.addEventListener('click', playGame);

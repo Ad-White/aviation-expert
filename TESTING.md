@@ -103,6 +103,20 @@ Manually tested with the below user acceptance testing:
 | | Navigate to non existant page | The page loads the 404.html response page | Pass | |
 
 
+
+A test I conducted to ensure the continuous running of the random tile generator
+
+| Start - 15:23 | ...16:17 | ...16:57 | Finish - 17:23 | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| ![screenshot](documentation/generator_test/generator_test_01.png) | ![screenshot](documentation/generator_test/generator_test_02.png) | ![screenshot](documentation/generator_test/generator_test_03.png) | ![screenshot](documentation/generator_test/generator_test_04.png) | Pass - Generator Does Not Stop |
+
+
+Results of testing the user answer text input for correct answers with extra spaces and hyphens included
+
+| Avro Vulcan | F-18 Hornet | Osprey | Spitfire | Result |
+| --- | --- | --- | --- | --- |
+| ![screenshot](documentation/user_answer_tests/user_answer_test_avro_vulcan.png) | ![screenshot](documentation/user_answer_tests/user_answer_test_f18.png) | ![screenshot](documentation/user_answer_tests/user_answer_test_osprey.png) | ![screenshot](documentation/user_answer_tests/user_answer_test_spitfire.png) | Pass - All Answers Submitted Checked As Correct |
+
 # Automatic Testing
 
 No automatic testing has been conducted, using the likes of Jest for example.
