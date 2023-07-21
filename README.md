@@ -77,12 +77,16 @@ I have chosen what I hope to be colours that will be intuitive for the player to
 - `#800080` - purple - used for next level button.
 - `#0000A8` - blue background + `#FFB833` - orange text - used for quit and continue buttons.
 
+![screenshot](documentation/ae_colours_used.png)
+
 ### Typography
  
  In keeping with a clean and simple feel to the site. Also, in order to offer a high degree of readability.
  I have opted for an Open Sans typeface.
 
 - [Open Sans](https://fonts.google.com/specimen/Open+Sans) was used for the primary text across the site.
+
+![screenshot](documentation/typefaces_used.png)
  
 ### Imagery
 

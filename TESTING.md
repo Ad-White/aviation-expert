@@ -153,6 +153,7 @@ These four bugs were particular areas of game development that had me scrathing 
 - This is related to a valuable piece of feedback I received.
 - It is more noticable on tablet and desktop devices. The structure of the tile table, followed by the message area then, user answer area. Means that it causes the Start and Stop buttons to jump about with the inclusion of messages during game play. I could appreciate that this has the ability to lessen a players enjoyment.
 - I have therefore, swapped the `<div>` with `id="buttons"`, to now follow the `tileTable`, and then the message area. I hope this achieves the aim of lessening the interference with the user interface.
+- This bug was brought to may attention quite recently. Therefore, all images used within this document show the game UI before the change was made. In time I shall replace all affected images. For now, please see the live website.
 
 	
 **Fixed Bugs, Errors and Warnings**
