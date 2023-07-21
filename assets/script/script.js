@@ -335,14 +335,14 @@ function playGame() {
   /** This function displays the players current game level*/
   function updateCurrentLevel() {
     let currentLevel = document.getElementById('currentLevel');
-    currentLevel.innerHTML = `<h4>Current Level: ` + `${gameLevel}</h4>`;
+    currentLevel.innerHTML = `<h2 class="h4">Current Level: ` + `${gameLevel}</h2>`;
   }
 
 
   /** This function displays the players remaining attempts*/
   function updateAttempts() {
     let attemptsRemaining = document.getElementById('attemptsRemaining');
-    attemptsRemaining.innerHTML = `<h4>Attempts Remaining: ` + `${attempts}</h4>`;
+    attemptsRemaining.innerHTML = `<h2 class="h4">Attempts Remaining: ` + `${attempts}</h2>`;
   }
 
 
@@ -370,7 +370,7 @@ function playGame() {
    *  It adds this info. to the footer of the page and includes a link to the website, Pixabay.
   */
   function displayPhotographer() {
-  document.getElementById('photographer').innerHTML = `<h5>Photo by ` + photographer + ` via <a href="https://pixabay.com/" target=_"blank">Pixabay</a></h5>`;
+  document.getElementById('photographer').innerHTML = `<h3 class="h5">Photo by ` + photographer + ` via <a href="https://pixabay.com/" target=_"blank">Pixabay</a></h3>`;
   }
   
 
