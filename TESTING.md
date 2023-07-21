@@ -116,16 +116,16 @@ the equivalent human testing. E.g. testing a thousand key presses.
 ### User Story Testing - Returning Site Users
 | User Story | Screenshot - example |
 | --- | --- |
-| As a new site user, I would like to play a game and attempt to identify the aircraft being hidden by tiles. | ![screenshot](documentation/*********.png) 
-| As a new site user, I would like to be able to skip my attempt to guess, if I have no idea as to the aircrafts identity. | ![screenshot](documentation/*********.png) |
-| As a new site user, I would like to have multiple attempts of using the tile selector in order to try and guess the correct answer. | ![screenshot](documentation/*********.png) 
-| As a new site user, I would like to continue playing the game by having the option of trying a new level if my answer is correct. | ![screenshot](documentation/*********.png) 
-| As a new site user, I would like to be able to quit the game at any time if I wish. Or to change my mind and continue playing. | ![screenshot](documentation/*********.png) 
+| As a new site user, I would like to play a game and attempt to identify the aircraft being hidden by tiles. | ![screenshot](documentation/testing_user_stories/start_a_game.png) 
+| As a new site user, I would like to be able to skip my attempt to guess, if I have no idea as to the aircrafts identity. | ![screenshot](documentation/testing_user_stories/skip_guess.png) |
+| As a new site user, I would like to have multiple attempts of using the tile selector in order to try and guess the correct answer. | ![screenshot](documentation/testing_user_stories/multiple_attempts.png) 
+| As a new site user, I would like to continue playing the game by having the option of trying a new level if my answer is correct. | ![screenshot](documentation/testing_user_stories/next_level.png) 
+| As a new site user, I would like to be able to quit the game at any time if I wish. Or to change my mind and continue playing. | ![screenshot](documentation/testing_user_stories/quit_or_continue.png) 
 
 ### User Story Testing - Returning Site Users
 | User Story | Screenshot - example |
 | --- | --- |
-| As a returning site user, I would like to play the game again but, with a diffent set of aircraft. | ![screenshot](documentation/*********.png) 
+| As a returning site user, I would like to play the game again but, with a different set of aircraft. (all potential aircraft within the game) | ![screenshot](documentation/testing_user_stories/all_aircraft.png) 
 
 
 ## Bugs
