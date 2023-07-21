@@ -224,67 +224,73 @@ function playGame() {
    *  If the players attempts reach 0, the game is over.
   */
   function checkAnswer() {
-    // removes leading and/or trailing white speace, then sets to lower case
-    let userAnswer = document.getElementById('userInputArea');
-    userAnswer = document.getElementById('userInputArea').value.trim().toLowerCase();
-    userAnswer = userAnswer.replace(/-|\s/g, ""); // removes hyphens and white space 
-    
-    // removes leading and/or trailing white speace, then sets to lower case
-    answer = answer.trim().toLowerCase();
-    answer = answer.replace(/-|\s/g, ""); // removes hyphens and white space 
+    // try to check answer. If there's a problem, inform player of an issue.
+    try {
+      // removes leading and/or trailing white speace, then sets to lower case
+      let userAnswer = document.getElementById('userInputArea');
+      userAnswer = document.getElementById('userInputArea').value.trim().toLowerCase();
+      userAnswer = userAnswer.replace(/-|\s/g, ""); // removes hyphens and white space 
+      
+      // removes leading and/or trailing white speace, then sets to lower case
+      answer = answer.trim().toLowerCase();
+      answer = answer.replace(/-|\s/g, ""); // removes hyphens and white space 
 
-    // If player was correct
-    if (userAnswer === answer) {
-      messageArea.innerHTML = `<p>Congratulations!</p>`;
-      finalReveal();
-      stopGenerator();
+      // If player was correct
+      if (userAnswer === answer) {
+        messageArea.innerHTML = `<p>Congratulations!</p>`;
+        finalReveal();
+        stopGenerator();
 
-      messageArea.innerHTML += `<p>Level ${gameLevel} Completed!</p>`;
-      startBtn.removeEventListener('click', startGenerator);
-      stopBtn.removeEventListener('click', stopGenerator);
+        messageArea.innerHTML += `<p>Level ${gameLevel} Completed!</p>`;
+        startBtn.removeEventListener('click', startGenerator);
+        stopBtn.removeEventListener('click', stopGenerator);
 
-      gameLevel++;
-      // If player game level exceeds the games total levels
-      if (gameLevel > 3) {
+        gameLevel++;
+        // If player game level exceeds the games total levels
+        if (gameLevel > 3) {
 
-        startBtn.remove();
-        stopBtn.remove();      
+          startBtn.remove();
+          stopBtn.remove();      
+          
+          document.getElementById('userAnswer').innerHTML = "";
+
+          messageArea.innerHTML = `<p>Game Completed!</p>` + `<br>` + `<h1>You Are An Aviation Expert!!!!</h1>`;
+
+          return;
+        }
+        // Display next level button if player was correct
+        document.getElementById('userAnswer').innerHTML = `<button id='nextLevelBtn' class="button">Next Level</button></p>`;
+        let nextLevelBtn = document.getElementById('nextLevelBtn');
+        nextLevelBtn.addEventListener('click', nextLevel);
+        // If player was incorrect and has more than one remaining attempt
+      } else if (userAnswer != answer && attempts >= 1) {
+        removeUserInput();
+        messageArea.innerHTML = `<p>Better Luck Next Time!<br>Press Start To Try Again...</p>`;
+        attempts--;
+
+        if (attempts != 1) {
+          messageArea.innerHTML += `<p>You Have ${attempts} Attempts Remaining.</p>`;
+        } else {
+          messageArea.innerHTML += `<p>You Have ${attempts} Attempt Remaining.</p>`;
+        }
+
+        startBtn.addEventListener('click', startGenerator);
+        updateAttempts();
+        generatorStarted = true;
+
+        // If player was incorrect and has no remaining attempts
+        if (userAnswer != answer && attempts <= 0) {
+          messageArea.innerHTML = `<h2>Game Over!</h2>
+          <br>
+          <p>Press Quit Then Exit<br>To Try Again</p>`;
+          startBtn.remove();
+          stopBtn.remove();   
+          return;
+        }
         
-        document.getElementById('userAnswer').innerHTML = "";
-
-        messageArea.innerHTML = `<p>Game Completed!</p>` + `<br>` + `<h1>You Are An Aviation Expert!!!!</h1>`;
-
-        return;
       }
-      // Display next level button if player was correct
-      document.getElementById('userAnswer').innerHTML = `<button id='nextLevelBtn' class="button">Next Level</button></p>`;
-      let nextLevelBtn = document.getElementById('nextLevelBtn');
-      nextLevelBtn.addEventListener('click', nextLevel);
-      // If player was incorrect and has more than one remaining attempt
-    } else if (userAnswer != answer && attempts >= 1) {
-      removeUserInput();
-      messageArea.innerHTML = `<p>Better Luck Next Time!<br>Press Start To Try Again...</p>`;
-      attempts--;
-
-      if (attempts != 1) {
-        messageArea.innerHTML += `<p>You Have ${attempts} Attempts Remaining.</p>`;
-      } else {
-        messageArea.innerHTML += `<p>You Have ${attempts} Attempt Remaining.</p>`;
-      }
-
-      startBtn.addEventListener('click', startGenerator);
-      updateAttempts();
-      generatorStarted = true;
-
-      // If player was incorrect and has no remaining attempts
-      if (userAnswer != answer && attempts <= 0) {
-        messageArea.innerHTML = `<h2>Game Over!</h2>
-        <br>
-        <p>Press Quit Then Exit<br>To Try Again</p>`;
-        startBtn.remove();
-        stopBtn.remove();   
-        return;
-      }
+    } catch (error) {
+      messageArea.innerHTML = `<p>Ooops! Something went wrong!<br>Please try again</p>`;
     }
   }
   
