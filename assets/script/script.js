@@ -96,7 +96,7 @@ function playGame() {
     currentGameImage = gameImageSelection[Math.floor(Math.random() * gameImageSelection.length)];
     answer = currentGameImage.gameImageName;
     photographer = currentGameImage.photographer;
-    
+
     let setDisplay = document.getElementById('tileTable');
     setDisplay.style.background = `${currentGameImage.gameImage}`;
     setDisplay.style.backgroundPosition = 'center';
@@ -449,23 +449,14 @@ function playGame() {
     <td id="12" class="tile inPlay">?</td>
     </tr>
     </table>
-    <div id="messageArea"></div>
-    <div id="userAnswer"></div>
-    
     <div id="buttons">
-        
     <button id="startBtn" class="button">Start</button>
     <button id="stopBtn" class="button">Stop</button>
-
-    </div>
-            
-    <div id="currentLevel">
-        current level
-    </div>
-    <div id="attemptsRemaining">
-        attempts remaining
-    </div>
-
+    </div>   
+    <div id="messageArea"></div>
+    <div id="userAnswer"></div>
+    <div id="currentLevel"></div>
+    <div id="attemptsRemaining"></div>
     <div id="quit">
         <button id="quitBtn" class="button">Quit</button>
     </div>`;
