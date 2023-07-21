@@ -254,7 +254,7 @@ function playGame() {
           
           document.getElementById('userAnswer').innerHTML = "";
 
-          messageArea.innerHTML = `<p>Game Completed!</p>` + `<br>` + `<h1>You Are An Aviation Expert!!!!</h1>`;
+          messageArea.innerHTML = `<p>Game Completed!</p>` + `<br>` + `<h2>You Are An Aviation Expert!!!!</h2>`;
 
           return;
         }
