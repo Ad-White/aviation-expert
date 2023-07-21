@@ -7,7 +7,7 @@ This website features a game consisting of knowledge, skill and luck.
 A fun guessing game where a player is given a number of attempts to try and select the tile of their choice using the random tile selector.
 Once the player selects a tile it disappears, revealing a portion of a larger image featuring an aircraft, hidden behind the tiles.
 The player is then prompted to enter their guess as to the name of the aircraft being obscured. Or to skip and try again, by selecting another tile to reveal.
-This continues until the player has used all their allotted attempts. At which point it's game over.
+This continues until the player has used all their allotted attempts. At this point the game over.
 If the player guesses correctly, a message of congratulations is displayed, and an option of continuing to another level is offered.
 At present the game features three levels. As the levels progress the number of attempts on offer reduce, adding an extra layer of difficulty.
 If the player succeeds to guess all three aircraft correctly, they have completed the game.
