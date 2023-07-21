@@ -315,4 +315,7 @@ However, I feel it is of importance, so I have given attribution to both within 
   
 ### Acknowledgments
 
-- I would like to acknowledge .....
+- I would like to thank my Code Institute mentor, Rory Patrick Sheridan, for their invaluable feedback, support and encouragement throughout the development of this project.
+- I would like to thank my tutor, Nigel Edwards from the College Of West Anglia, for their guidance, suggestions and assistance at various stages of developing this project. 
+- I would like to thank those of my family and friends in helping to test this game. And providing valuable feedback.
+- I would like to thank my partner Michelle, for believing in me, and continuing to support me in making this transition into software development.
